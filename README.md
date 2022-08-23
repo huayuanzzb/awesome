@@ -10,7 +10,7 @@ Followig command build and publish the static files:
 ng build --base-href "https://recaton.github.io/tools/"
 
 # this command will create a branch named "gh-pages" contains the finally static files, these files will be published if Github Pages setting is correct.
-npx angular-cli-ghpages --dir=dist/docs
+npx angular-cli-ghpages --dir=dist/tools
 ```
 
 # Visit
