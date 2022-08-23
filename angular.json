@@ -68,7 +68,8 @@
               "browserTarget": "tools:build:production"
             },
             "development": {
-              "browserTarget": "tools:build:development"
+              "browserTarget": "tools:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"
