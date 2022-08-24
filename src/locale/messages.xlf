@@ -30,15 +30,15 @@
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="1151157844329604184" datatype="html">
-        <source>showMills</source>
+      <trans-unit id="3113560274397842703" datatype="html">
+        <source>Show Mills</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/time/now/now.component.ts</context>
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="1013494687193200453" datatype="html">
-        <source>copyValue</source>
+      <trans-unit id="7616659347778850204" datatype="html">
+        <source>Copy Value</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/time/now/now.component.ts</context>
           <context context-type="linenumber">18</context>

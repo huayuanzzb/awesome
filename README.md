@@ -7,7 +7,7 @@ It use [angular-cli-ghpages](https://medium.com/tech-insights/how-to-deploy-angu
 # Build
 Extract localize files:
 ```bash
-
+ng extract-i18n --output-path src/locale
 ```
 Followig command build and publish the static files:
 ```bash

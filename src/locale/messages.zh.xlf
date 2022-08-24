@@ -34,7 +34,7 @@
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="1151157844329604184" datatype="html">
+      <trans-unit id="3113560274397842703" datatype="html">
         <source>Show Mills</source>
         <target>显示毫秒</target>
         <context-group purpose="location">
@@ -42,7 +42,7 @@
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="1013494687193200453" datatype="html">
+      <trans-unit id="7616659347778850204" datatype="html">
         <source>Copy Value</source>
         <target>复制</target>
         <context-group purpose="location">
