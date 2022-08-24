@@ -7,7 +7,10 @@ import { TimeComponent } from './time/time.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTableModule } from '@angular/material/table';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatIconModule,
     MatSnackBarModule,
     MatSlideToggleModule,
-    MatToolbarModule,
+    MatTableModule,
+    MatGridListModule,
+    MatCardModule,
+    MatTooltipModule,
   ]
 })
 export class TimeModule { }

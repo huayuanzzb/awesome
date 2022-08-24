@@ -1,9 +1,20 @@
-<p>
-    <mat-toolbar color="primary">
-        <span>{{ now | date: nowFormat : 'GMT+8' }}</span>
-        <mat-slide-toggle [checked]="showMills" (change)="switchMills()">Show mills</mat-slide-toggle>
-        <span class="spacer"></span>
-        <span>{{ epochNow }}</span>
-        <mat-icon aria-hidden="false" aria-label="Copy icon" fontIcon="file_copy" (click)="copyEpochNow()"></mat-icon>
-    </mat-toolbar>
-</p>
+  <mat-grid-list cols="12" rowHeight="50px">
+    <mat-grid-tile colspan="3">
+        <span class="title" i18n>Current: </span>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="6">
+        {{ now | date: nowFormat : 'GMT+8' }}
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3">
+        <mat-slide-toggle [checked]="showMills" (change)="switchMills()" matTooltip="Show mills"></mat-slide-toggle>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3">
+        <span class="title" i18n>epoch: </span>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="6">
+        {{ epochNow }}
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3">
+        <mat-icon aria-hidden="false" aria-label="Copy icon" fontIcon="file_copy" (click)="copyEpochNow()" matTooltip="Copy value"></mat-icon>
+    </mat-grid-tile>
+  </mat-grid-list>
