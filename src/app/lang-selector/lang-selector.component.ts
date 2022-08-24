@@ -29,8 +29,7 @@ export class LangSelectorComponent implements OnInit {
   onChangeLang(langCode: string) {
     this.activeLocale = langCode;
     console.log(`base: ${this.baseHref}${this.activeLocale}`);
-    // TODO update domain
-    window.location.href = `https://recaton.github.io/tools/${this.activeLocale}`;
+    window.location.href = `${this.baseHref}/${this.activeLocale}`;
   }
 
 }

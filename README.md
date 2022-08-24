@@ -11,7 +11,7 @@ ng extract-i18n --output-path src/locale
 ```
 Followig command build and publish the static files:
 ```bash
-ng build --localize --base-href "https://recaton.github.io/tools/"
+ng build --localize --base-href "https://recaton.github.io/tools/" && cp .github/index.html dist/tools/
 
 # this command will create a branch named "gh-pages" contains the finally static files, these files will be published if Github Pages setting is correct.
 npx angular-cli-ghpages --dir=dist/tools
