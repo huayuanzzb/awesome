@@ -9,6 +9,14 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "zh": {
+            "translation": "src/locale/messages.zh.xlf"
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -56,7 +64,17 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "localize": ["en-US"]
+            },
+            "zh": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "localize": ["zh"]
             }
           },
           "defaultConfiguration": "production"
@@ -70,6 +88,9 @@
             "development": {
               "browserTarget": "tools:build:development",
               "disableHostCheck": true
+            },
+            "zh": {
+              "browserTarget": "tools:build:zh"
             }
           },
           "defaultConfiguration": "development"

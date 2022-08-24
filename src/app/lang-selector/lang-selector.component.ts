@@ -20,16 +20,17 @@ export class LangSelectorComponent implements OnInit {
 
   constructor(
     @Inject(LOCALE_ID) public activeLocale: string,
-    @Inject(APP_BASE_HREF) public baseHref: string) { }
+    @Inject(APP_BASE_HREF) public baseHref: string,
+    ) { }
 
   ngOnInit(): void {
   }
   
-  onChangeLang() {
-    console.log(`baseHref: ${this.baseHref}`)
-    const base = this.baseHref ? this.baseHref : '' 
-    console.log(`base: ${base}`)
-    // window.location.href = `${base}/${this.activeLocale}`;
+  onChangeLang(langCode: string) {
+    this.activeLocale = langCode;
+    console.log(`base: ${this.baseHref}${this.activeLocale}`);
+    // TODO update domain
+    window.location.href = `https://recaton.github.io/tools/${this.activeLocale}`;
   }
 
 }

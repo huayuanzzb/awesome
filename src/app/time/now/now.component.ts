@@ -14,6 +14,9 @@ export class NowComponent implements OnInit {
   epochNow: number = 0;
   showMills: boolean = false;
 
+  i18n_showMills: string = $localize`Show Mills`;
+  i18n_copyValue: string = $localize`Copy Value`;
+
   constructor(
     private clipboard: Clipboard,
     private snackBar: MatSnackBar

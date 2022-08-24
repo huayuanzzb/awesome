@@ -11,15 +11,22 @@ import { MatTableModule } from '@angular/material/table';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { CovertComponent } from './covert/covert.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     NowComponent,
-    TimeComponent
+    TimeComponent,
+    CovertComponent
   ],
   imports: [
     CommonModule,
     TimeRoutingModule,
+    FormsModule,
     MatIconModule,
     MatSnackBarModule,
     MatSlideToggleModule,
@@ -27,6 +34,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatGridListModule,
     MatCardModule,
     MatTooltipModule,
+    MatFormFieldModule,
+    MatInputModule,
   ]
 })
 export class TimeModule { }

@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "start:zh": "ng serve --configuration zh",
+    "build": "ng build --localize",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -28,6 +29,7 @@
     "@angular-devkit/build-angular": "^14.1.3",
     "@angular/cli": "~14.1.3",
     "@angular/compiler-cli": "^14.1.0",
+    "@angular/localize": "^14.1.3",
     "@types/jasmine": "~4.0.0",
     "angular-cli-ghpages": "^1.0.3",
     "jasmine-core": "~4.2.0",

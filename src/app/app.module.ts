@@ -11,12 +11,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
+import { MatMenuModule } from '@angular/material/menu';
+import { APP_BASE_HREF, PlatformLocation } from '@angular/common';
+import { LangSelectorComponent } from './lang-selector/lang-selector.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LangSelectorComponent
   ],
   imports: [
     BrowserModule,
@@ -29,10 +31,15 @@ import { MatSelectModule } from '@angular/material/select';
     MatIconModule,
     MatListModule,
     MatDividerModule,
-    MatFormFieldModule,
-    MatSelectModule,
+    MatMenuModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_BASE_HREF,
+      useFactory: (s: PlatformLocation) => s.getBaseHrefFromDOM(),
+      deps: [PlatformLocation]
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
