@@ -1,5 +1,6 @@
 <script>
     const getLanguage = () => navigator.userLanguage || (navigator.languages && navigator.languages.length && navigator.languages[0]) || navigator.language || navigator.browserLanguage || navigator.systemLanguage || 'en-US';
     const cachedLang = window.localStorage.getItem('selectedLang');
-    window.location.href = window.location + lang
+    const lang = cachedLang ? cachedLang : getLanguage();
+    window.location.href = window.location + lang;
 </script>

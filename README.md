@@ -20,3 +20,5 @@ npx angular-cli-ghpages --dir=dist/tools
 # Visit
 After that, you can visit [https://recaton.github.io/tools/](https://recaton.github.io/tools/) to see the new changes.
 
+# Reference
+* [i18n](https://phrase.com/blog/posts/angular-localization-i18n/#How_do_I_work_with_plurals_in_my_translations)
