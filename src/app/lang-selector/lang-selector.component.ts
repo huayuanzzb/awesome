@@ -16,20 +16,22 @@ export class LangSelectorComponent implements OnInit {
       code: 'en-US',
       viewValue: 'English'
     },
-  ]
+  ];
 
   constructor(
     @Inject(LOCALE_ID) public activeLocale: string,
-    @Inject(APP_BASE_HREF) public baseHref: string,
-    ) { }
+    @Inject(APP_BASE_HREF) private baseHref: string,
+    ) {
+    }
 
   ngOnInit(): void {
   }
   
   onChangeLang(langCode: string) {
     this.activeLocale = langCode;
-    console.log(`base: ${this.baseHref}${this.activeLocale}`);
-    window.location.href = `${this.baseHref}/${this.activeLocale}`;
+    localStorage.setItem('selectedLang', langCode);
+    const basePath = this.baseHref == '/' ? '' : this.baseHref.split('/')[0] + '/' + this.baseHref.split('/')[1];
+    window.location.href = `${basePath}/${this.activeLocale}`;
   }
 
 }

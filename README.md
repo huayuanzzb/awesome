@@ -1,4 +1,4 @@
-# Tools
+# Awesome Toolbox
 
 This project is a pure javascript project and is used to build some tools for me. 
 
