@@ -12,42 +12,26 @@
       </trans-unit>
       <trans-unit id="191896776974707877" datatype="html">
         <source>Date Time</source>
-        <target>时间</target>
+        <target>时间日期</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/time/covert/covert.component.html</context>
-          <context context-type="linenumber">4</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="8494969643604394343" datatype="html">
-        <source>Current: </source>
-        <target>当前: </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/time/now/now.component.html</context>
           <context context-type="linenumber">3</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="2981560535337076229" datatype="html">
-        <source>epoch: </source>
-        <target>epoch: </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/time/now/now.component.html</context>
-          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3113560274397842703" datatype="html">
         <source>Show Mills</source>
         <target>显示毫秒</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/time/now/now.component.ts</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="sourcefile">src/app/time/time/time.component.ts</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7616659347778850204" datatype="html">
-        <source>Copy Value</source>
-        <target>复制</target>
+      <trans-unit id="4137907838636076016" datatype="html">
+        <source>Click to copy</source>
+        <target>点击复制</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/time/now/now.component.ts</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="sourcefile">src/app/time/time/time.component.ts</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
     </body>

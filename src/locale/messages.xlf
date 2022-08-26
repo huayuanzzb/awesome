@@ -13,35 +13,21 @@
         <source>Date Time</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/time/covert/covert.component.html</context>
-          <context context-type="linenumber">4</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="8494969643604394343" datatype="html">
-        <source>Current: </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/time/now/now.component.html</context>
           <context context-type="linenumber">3</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="2981560535337076229" datatype="html">
-        <source>epoch: </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/time/now/now.component.html</context>
-          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3113560274397842703" datatype="html">
         <source>Show Mills</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/time/now/now.component.ts</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="sourcefile">src/app/time/time/time.component.ts</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7616659347778850204" datatype="html">
-        <source>Copy Value</source>
+      <trans-unit id="4137907838636076016" datatype="html">
+        <source>Click to copy</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/time/now/now.component.ts</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="sourcefile">src/app/time/time/time.component.ts</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
     </body>

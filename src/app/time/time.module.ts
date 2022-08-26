@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { TimeRoutingModule } from './time-routing.module';
-import { NowComponent } from './now/now.component';
 import { TimeComponent } from './time/time.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -19,7 +18,6 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    NowComponent,
     TimeComponent,
     CovertComponent
   ],
