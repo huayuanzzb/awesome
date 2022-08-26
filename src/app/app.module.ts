@@ -14,6 +14,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
 import { APP_BASE_HREF, PlatformLocation } from '@angular/common';
 import { LangSelectorComponent } from './lang-selector/lang-selector.component';
+import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,19 @@ import { LangSelectorComponent } from './lang-selector/lang-selector.component';
       provide: APP_BASE_HREF,
       useFactory: (s: PlatformLocation) => s.getBaseHrefFromDOM(),
       deps: [PlatformLocation]
+    },
+    {
+      provide: HIGHLIGHT_OPTIONS,
+      useValue: {
+        coreLibraryLoader: () => import('highlight.js/lib/core'),
+        languages: {
+          typescript: () => import('highlight.js/lib/languages/typescript'),
+          css: () => import('highlight.js/lib/languages/css'),
+          xml: () => import('highlight.js/lib/languages/xml'),
+          json: () => import('highlight.js/lib/languages/json'),
+        },
+        themePath: '//cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/atom-one-dark.min.css'
+      }
     }
   ],
   bootstrap: [AppComponent]

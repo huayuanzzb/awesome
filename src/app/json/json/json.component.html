@@ -1,0 +1,14 @@
+<div class="row">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label i18n>Date Time</mat-label>
+        <textarea matInput i18n-placeholder="Input Json1" (input)="onInputChangeJson1()" [(ngModel)]="json1"
+            rows="70"></textarea>
+    </mat-form-field>
+    <span class="spacer"></span>
+    <mat-card class="example-full-width">
+        <pre>
+            <code [highlight]="json2"></code>
+        </pre>
+    </mat-card>
+
+</div>
