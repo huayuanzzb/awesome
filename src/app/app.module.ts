@@ -14,7 +14,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
 import { APP_BASE_HREF, PlatformLocation } from '@angular/common';
 import { LangSelectorComponent } from './lang-selector/lang-selector.component';
-import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
+import { HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
     MatListModule,
     MatDividerModule,
     MatMenuModule,
+    MatSnackBarModule,
   ],
   providers: [
     {

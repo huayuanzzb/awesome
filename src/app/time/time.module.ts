@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { TimeRoutingModule } from './time-routing.module';
 import { TimeComponent } from './time/time.component';
 import { MatIconModule } from '@angular/material/icon';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -26,7 +25,6 @@ import { FormsModule } from '@angular/forms';
     TimeRoutingModule,
     FormsModule,
     MatIconModule,
-    MatSnackBarModule,
     MatSlideToggleModule,
     MatTableModule,
     MatGridListModule,

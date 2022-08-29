@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Clipboard } from '@angular/cdk/clipboard';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { formatDate } from '@angular/common';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-time',
@@ -21,7 +21,7 @@ export class TimeComponent implements OnInit {
 
   constructor(
     private clipboard: Clipboard,
-    private snackBar: MatSnackBar,
+    private notifier: NotificationService,
   ) { }
 
   ngOnInit(): void {
@@ -33,24 +33,17 @@ export class TimeComponent implements OnInit {
 
   copyEpochNow() {
     this.clipboard.copy(this.epochNow);
-    this.notification(this.i18n_copied);
+    this.notifier.notify(this.i18n_copied);
   }
 
   copyDateTime() {
     this.clipboard.copy(formatDate(this.now, this.nowFormat, 'en-US'));
-    this.notification(this.i18n_copied);
+    this.notifier.notify(this.i18n_copied);
   }
 
   switchMills() {
     this.showMills = !this.showMills;
     this.nowFormat = this.showMills ? 'yyyy-MM-dd HH:mm:ss.SSS' : 'yyyy-MM-dd HH:mm:ss';
-  }
-
-  notification(message: string) {
-    this.snackBar.open(message, '', {
-      duration: 2000,
-      verticalPosition: 'top'
-    });
   }
 
 }

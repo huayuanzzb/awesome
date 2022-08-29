@@ -1,11 +1,19 @@
 <div class="row">
     <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label i18n>Date Time</mat-label>
-        <textarea matInput i18n-placeholder="Input Json1" (input)="onInputChangeJson1()" [(ngModel)]="json1"
-            rows="70"></textarea>
+        <mat-label i18n>JSON string</mat-label>
+        <textarea matInput i18n-placeholder="Input Json1" (input)="onInputChangeJson1()" [(ngModel)]="json1" cdkTextareaAutosize
+        cdkAutosizeMinRows="60" cdkAutosizeMaxRows="150"></textarea>
     </mat-form-field>
-    <span class="spacer"></span>
     <mat-card class="example-full-width">
+        <div class="row">
+            <mat-icon (click)="compress()">storage</mat-icon>
+            <mat-icon (click)="copy()">file_copy</mat-icon>
+            <span class="spacer"></span>
+            <mat-icon [matMenuTriggerFor]="ident">settings</mat-icon>
+            <mat-menu #ident="matMenu">
+                <button mat-menu-item *ngFor="let i of allIdents" (click)="onChangeIdent(i)">{{ i }}</button>
+            </mat-menu>
+        </div>
         <pre>
             <code [highlight]="json2"></code>
         </pre>

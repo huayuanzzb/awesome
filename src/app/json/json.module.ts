@@ -10,6 +10,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatCardModule } from '@angular/material/card';
 import { HighlightModule } from 'ngx-highlightjs';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,9 @@ import { HighlightModule } from 'ngx-highlightjs';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule,
     HighlightModule,
   ]
 })
