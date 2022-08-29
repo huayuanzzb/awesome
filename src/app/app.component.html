@@ -1,7 +1,10 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav-content>
       <mat-toolbar color="primary">
-        <span>Awesome Toolbox</span>
+        <a mat-button herf="javascript: void(0)">Awesome Toolbox</a>
+        <span class="spacer"></span>
+        <a mat-button [routerLink]="['/time']">Time</a>
+        <a mat-button [routerLink]="['/json']">JSON</a>
         <span class="spacer"></span>
         <app-lang-selector></app-lang-selector>
       </mat-toolbar>
