@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ToolSetRoutingModule } from './tool-set-routing.module';
 import { ToolSetComponent } from './tool-set/tool-set.component';
 import { TimeModule } from '../time/time.module';
+import { RandomStringModule } from '../random-string/random-string.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { TimeModule } from '../time/time.module';
   imports: [
     CommonModule,
     ToolSetRoutingModule,
-    TimeModule
+    TimeModule,
+    RandomStringModule
   ]
 })
 export class ToolSetModule { }

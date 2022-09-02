@@ -1,0 +1,15 @@
+
+<mat-card>
+    <mat-card-title class="row">
+        <span i18n>Random String</span>
+        <span class="spacer"></span>
+    </mat-card-title>
+    <mat-card-content>
+        <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Clearable input</mat-label>
+            <input matInput type="number" [(ngModel)]="count">
+          </mat-form-field>
+          <button mat-raised-button color="primary" (click)="generate()">Primary</button>
+        <p>{{ randomString }}</p>
+    </mat-card-content>
+</mat-card>
