@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { formatDate } from '@angular/common';
 import { NotificationService } from 'src/app/services/notification.service';
+import { SettingsService } from 'src/app/services/settings.service';
 
 @Component({
   selector: 'app-time',
@@ -11,9 +12,9 @@ import { NotificationService } from 'src/app/services/notification.service';
 export class TimeComponent implements OnInit {
 
   now: Date = new Date();
-  nowFormat: string = 'yyyy-MM-dd HH:mm:ss';
+  nowFormat: string = '';
   epochNow: string = '';
-  showMills: boolean = false;
+  showMills: boolean;
 
   i18n_showMills: string = $localize`Show Mills`;
   i18n_copyValue: string = $localize`Click to copy`;
@@ -22,7 +23,11 @@ export class TimeComponent implements OnInit {
   constructor(
     private clipboard: Clipboard,
     private notifier: NotificationService,
-  ) { }
+    private settingsService: SettingsService,
+  ) { 
+    this.showMills = this.settingsService.getSettings().timeSetting.showMills === true;
+    this.setDateTimeFormat();
+  }
 
   ngOnInit(): void {
     setInterval(() =>{
@@ -43,6 +48,11 @@ export class TimeComponent implements OnInit {
 
   switchMills() {
     this.showMills = !this.showMills;
+    this.setDateTimeFormat();
+    this.settingsService.setSettings('timeSetting.showMills', this.showMills)
+  }
+
+  private setDateTimeFormat() {
     this.nowFormat = this.showMills ? 'yyyy-MM-dd HH:mm:ss.SSS' : 'yyyy-MM-dd HH:mm:ss';
   }
 

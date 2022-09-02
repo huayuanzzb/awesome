@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-time-covert',
@@ -32,7 +33,7 @@ export class CovertComponent implements OnInit {
   }
 
   private covertToDateTime(n: number): string {
-    return new Date(n).toString();
+    return formatDate(new Date(n), 'yyyy-MM-dd HH:mm:ss.SSS', 'en-US');
   }
 
   private covertToEpoch(s: string): number {
