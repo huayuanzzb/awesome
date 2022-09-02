@@ -4,12 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'time',
+    redirectTo: 'set',
     pathMatch: 'full'
   },
   {
-    path: 'time',
-    loadChildren: () => import('./time/time.module').then(m => m.TimeModule)
+    path: 'set',
+    loadChildren: () => import('./tool-set/tool-set.module').then(m => m.ToolSetModule)
   },
   {
     path: 'json',

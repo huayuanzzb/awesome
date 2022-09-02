@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TimeComponent } from './time/time.component';
+import { ToolSetComponent } from './tool-set/tool-set.component';
 
 const routes: Routes = [
   {
-    path: '', component: TimeComponent
+    path: '', component: ToolSetComponent
   }
 ];
 
@@ -12,4 +12,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TimeRoutingModule { }
+export class ToolSetRoutingModule { }

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TimeRoutingModule } from './time-routing.module';
 import { TimeComponent } from './time/time.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -22,7 +21,6 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    TimeRoutingModule,
     FormsModule,
     MatIconModule,
     MatSlideToggleModule,
@@ -32,6 +30,9 @@ import { FormsModule } from '@angular/forms';
     MatTooltipModule,
     MatFormFieldModule,
     MatInputModule,
+  ],
+  exports: [
+    TimeComponent
   ]
 })
 export class TimeModule { }
