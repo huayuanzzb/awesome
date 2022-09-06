@@ -20,6 +20,9 @@ jobs:
       - name: Build
         run: |
           ng build --localize --base-href "https://recaton.github.io/tools/" 
+          ls .
+          echo '========'
+          ls .github
           cp .github/index.html dist/tools/
        
       - name: Deploy
