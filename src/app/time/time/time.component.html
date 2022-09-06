@@ -1,9 +1,10 @@
 <mat-card>
-    <mat-card-title class="row">
-        <span i18n>Date Time</span>
-        <span class="spacer"></span>
-        <mat-slide-toggle [checked]="showMills" (change)="switchMills()" matTooltip="{{ i18n_showMills }}">
-        </mat-slide-toggle>
+    <mat-card-title>
+        <div class="row">
+            <span i18n>Date Time</span>
+            <span class="spacer"></span>
+            <mat-slide-toggle [checked]="showMills" (change)="switchMills()" matTooltip="{{ i18n_showMills }}"></mat-slide-toggle>
+        </div>
     </mat-card-title>
     <mat-card-content>
         <app-time-covert></app-time-covert>
