@@ -24,6 +24,6 @@ jobs:
           echo '========'
           ls .github
           cp .github/index.html dist/tools/
-       
-      - name: Deploy
-        run: npx --no-silent angular-cli-ghpages --dir=dist/tools
+          echo '========'
+          ls dist
+          npx --no-silent angular-cli-ghpages --dir=dist/tools
