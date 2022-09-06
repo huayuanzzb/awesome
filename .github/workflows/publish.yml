@@ -24,4 +24,4 @@ jobs:
         run: |
           ng build --localize --base-href "https://recaton.github.io/tools/" 
           cp .github/index.html dist/tools/
-          ng deploy --no-build
+          ng deploy --no-build --no-silent
