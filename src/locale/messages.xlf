@@ -20,6 +20,31 @@
           <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="3756628734717016744" datatype="html">
+        <source>Show in one line</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/json/json/json.component.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4137907838636076016" datatype="html">
+        <source>Click to copy</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/json/json/json.component.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/time/time/time.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8739361321695877219" datatype="html">
+        <source>Set indent</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/json/json/json.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="2826581353496868063" datatype="html">
         <source>Language</source>
         <context-group purpose="location">
@@ -113,13 +138,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/time/time/time.component.ts</context>
           <context context-type="linenumber">19</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="4137907838636076016" datatype="html">
-        <source>Click to copy</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/time/time/time.component.ts</context>
-          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
     </body>

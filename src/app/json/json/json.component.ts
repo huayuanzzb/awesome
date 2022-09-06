@@ -11,40 +11,43 @@ export class JsonComponent implements OnInit {
 
   json1: string = '';
   json2: string = "";
-  allIdents: number[] = [2, 4];
-  ident: number;
+  allIndents: number[] = [2, 4];
+  indent: number;
   
   i18n_copied: string = $localize`Copied!`;
+  i18n_storage: string = $localize`Show in one line`;
+  i18n_copyValue: string = $localize`Click to copy`;
+  i18n_indent: string = $localize`Set indent`;
 
   constructor(
     private clipboard: Clipboard,
     private notifier: NotificationService,
   ) {
-    this.ident = this.allIdents[0];
+    this.indent = this.allIndents[0];
   }
 
   ngOnInit(): void {
   }
 
   onInputChangeJson1() {
-    this.covertJson(this.ident);
+    this.covertJson(this.indent);
   }
 
-  private covertJson(ident: number) {
+  private covertJson(indent: number) {
     try {
       if (this.json1 == null || this.json1 == undefined || this.json1.trim() == '') {
         this.json2 = '';
       } else {
-        this.json2 = JSON.stringify(JSON.parse(this.json1), null, ident);
+        this.json2 = JSON.stringify(JSON.parse(this.json1), null, indent);
       }
     } catch (error: any) {
       this.json2 = error.message;
     }
   }
 
-  onChangeIdent(ident: number) {
-    this.ident = ident;
-    this.covertJson(this.ident);
+  onChangeIndent(indent: number) {
+    this.indent = indent;
+    this.covertJson(this.indent);
   }
 
   compress() {
