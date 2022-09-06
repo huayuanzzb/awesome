@@ -1,0 +1,11 @@
+name: Publish
+push:
+    branches:
+      - main
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build
+        run: echo Building...
