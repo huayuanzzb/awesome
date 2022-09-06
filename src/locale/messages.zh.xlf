@@ -2,12 +2,112 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="4450607820531765777" datatype="html">
+        <source>JSON string</source>
+        <target>JSON 字符串</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/json/json/json.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5392341774767336507" datatype="html">
+        <source>Copied!</source>
+        <target>已复制!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/json/json/json.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/time/time/time.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="2826581353496868063" datatype="html">
         <source>Language</source>
         <target>语言</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/lang-selector/lang-selector.component.html</context>
           <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7178567146591608420" datatype="html">
+        <source>Random String</source>
+        <target>随机字符串</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/random-string/random-string/random-string.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2827233633791350200" datatype="html">
+        <source>Length</source>
+        <target>长度</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/random-string/random-string/random-string.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3948214469558214960" datatype="html">
+        <source>Upper case letter</source>
+        <target>大写字母</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/random-string/random-string/random-string.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7626821947904356495" datatype="html">
+        <source>Lower case letter</source>
+        <target>小写字母</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/random-string/random-string/random-string.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9144195012923802910" datatype="html">
+        <source>Digital letter</source>
+        <target>数字</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/random-string/random-string/random-string.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7905025609739663946" datatype="html">
+        <source>Special letter</source>
+        <target>特殊字符</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/random-string/random-string/random-string.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3755601013701439437" datatype="html">
+        <source>Generate And Copy</source>
+        <target>生成并复制</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/random-string/random-string/random-string.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2095722121526391603" datatype="html">
+        <source>Length is not enough for all options!</source>
+        <target>长度不足以应用所有选项!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/random-string/random-string/random-string.component.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1885871169973200501" datatype="html">
+        <source>At least one option must be selected!</source>
+        <target>至少选择一个选项!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/random-string/random-string/random-string.component.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3767028775819325033" datatype="html">
+        <source>The resulting string has been copied to the clipboard.</source>
+        <target>生成的字符串已被复制到剪切板</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/random-string/random-string/random-string.component.ts</context>
+          <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="191896776974707877" datatype="html">

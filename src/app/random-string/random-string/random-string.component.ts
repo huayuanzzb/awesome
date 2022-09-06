@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { map, range, reduce } from 'rxjs';
+import { Clipboard } from '@angular/cdk/clipboard';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-random-string',
@@ -10,17 +11,20 @@ export class RandomStringComponent implements OnInit {
 
   randomString: string = '';
   count: number = 6;
-  upper: boolean = false;
-  lower: boolean = false;
-  digital: boolean = false;
+  upper: boolean = true;
+  lower: boolean = true;
+  digital: boolean = true;
   special: boolean = false;
 
-  constructor() { }
+  constructor(
+    private clipboard: Clipboard,
+    private notifier: NotificationService,
+  ) { }
 
   ngOnInit(): void {
   }
 
-  generate() {
+  generateAndCopy() {
     let options = [this.upper, this.lower, this.digital, this.special]
     const optionsPool = [];
     for (let i = 0; i < options.length; i++) {
@@ -30,10 +34,10 @@ export class RandomStringComponent implements OnInit {
     }
     options.filter(e => e == true);
     if (optionsPool.length > this.count) {
-      alert("count is too small")
+      alert($localize`Length is not enough for all options!`)
     }
     if (optionsPool.length == 0) {
-      alert("option too fewer")
+      alert($localize`At least one option must be selected!`)
     }
     const optionsLetterCount: number[] = options.map(e => e == true ? 1 : 0);
     for(let i = 0; i < this.count - optionsPool.length; i++) {
@@ -53,6 +57,12 @@ export class RandomStringComponent implements OnInit {
       }
     }
     this.randomString = result.split('').sort(function() { return 0.5 - Math.random(); }).join('');
+    this.copy();
+  }
+
+  copy() {
+    this.clipboard.copy(this.randomString);
+    this.notifier.notify($localize`The resulting string has been copied to the clipboard.`)
   }
 
   private genrateRandomNumber(min: number, max: number): number {
