@@ -24,5 +24,4 @@ jobs:
         run: |
           ng build --localize --base-href "https://recaton.github.io/tools/" 
           cp .github/index.html dist/tools/
-          echo "========${GH_TOKEN}"
-          ng deploy
+          ng deploy --no-build
