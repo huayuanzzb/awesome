@@ -20,9 +20,5 @@ jobs:
       - name: Build and Deploy
         run: |
           ng build --localize --base-href "https://recaton.github.io/tools/" 
-          ls .github
           cp .github/index.html dist/tools/
-          echo '========'
-          ls dist/tools
-          echo '========'
-          npx --no-silent angular-cli-ghpages --dir=dist/tools
+          npx angular-cli-ghpages --dir=dist/tools
