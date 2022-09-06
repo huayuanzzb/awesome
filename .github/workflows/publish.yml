@@ -17,13 +17,12 @@ jobs:
       - name: Install dependency
         run: npm install
         
-      - name: Build
+      - name: Build and Deploy
         run: |
           ng build --localize --base-href "https://recaton.github.io/tools/" 
-          ls .
-          echo '========'
           ls .github
           cp .github/index.html dist/tools/
           echo '========'
-          ls dist
+          ls dist/tools
+          echo '========'
           npx --no-silent angular-cli-ghpages --dir=dist/tools
