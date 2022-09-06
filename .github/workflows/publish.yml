@@ -8,5 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Build
-        run: echo Building...
+      - name: Checkout
+        uses: actions/checkout@v2.4.2
+        
+      - name: Angular Github Actions
+        uses: mayurrawte/github-angular-actions@latest
+
+      - name: Test
+        run: pwd && ng --help
