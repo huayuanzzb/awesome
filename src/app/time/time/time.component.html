@@ -8,7 +8,7 @@
     </mat-card-title>
     <mat-card-content>
         <app-time-covert></app-time-covert>
-        <div class="row">
+        <div class="row" style="line-height: 24px;">
             <span (click)="copyDateTime()" matTooltip="{{ i18n_copyValue }}">{{ now | date: nowFormat }}</span>
             <span class="spacer"></span>
             <span (click)="copyEpochNow()" matTooltip="{{ i18n_copyValue }}">{{ epochNow }}</span>

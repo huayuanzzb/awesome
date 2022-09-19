@@ -2,4 +2,9 @@
     padding: 16px;
     font-size: xx-large;
     font-weight: 400;
+    color: blueviolet;
+}
+
+.row-item {
+    flex: 4 1 auto;
 }

@@ -4,6 +4,10 @@
     box-shadow: none;
 }
 
+.row {
+    align-items: flex-start;
+}
+
 .row-item {
     flex: 2 1 auto;
 }
