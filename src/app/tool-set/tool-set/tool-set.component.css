@@ -1,0 +1,6 @@
+.row {
+    column-gap: 10px;
+}
+.row-item {
+    flex: 2 1 auto;
+}

@@ -1,20 +1,11 @@
-.row {
-    display: flex;
-    width: 100%;
-}
-
-.row-item {
-    flex: 2 1 auto;
-}
-
-.spacer {
-    flex: 1 1 auto;
-  }
-
 .mat-card {
     padding: 0;
     margin-bottom: 1.34375em;
     box-shadow: none;
+}
+
+.row-item {
+    flex: 2 1 auto;
 }
 
 .mat-icon {

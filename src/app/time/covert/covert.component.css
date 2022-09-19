@@ -1,13 +1,4 @@
 .example-full-width {
-  min-width: 450px;
-}
-
-.row {
-  display: flex;
-  width: 100%;
-  align-items: center;
-}
-
-.spacer {
-  flex: 1 1 auto;
+  /* min-width: 450px; */
+  flex: 5 1 auto
 }
