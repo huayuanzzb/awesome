@@ -1,10 +1,10 @@
-.example-full-width {
-    min-width: 50%;
-}
-
 .row {
     display: flex;
     width: 100%;
+}
+
+.row-item {
+    flex: 2 1 auto;
 }
 
 .spacer {
@@ -23,8 +23,17 @@
 }
 
 pre {
-    display: block;
+    display: flex;
     font-family: monospace;
     white-space: pre;
     margin: 0em 0px;
+}
+
+.json1-content {
+    height: calc(100vh - 120px);
+}
+
+.json2-content {
+    max-height: calc(100vh - 120px - 0.4em - 24px + 4px);
+    flex: 1 1 auto;
 }

@@ -9,8 +9,8 @@ import { NotificationService } from 'src/app/services/notification.service';
 })
 export class JsonComponent implements OnInit {
 
-  json1: string = '';
-  json2: string = "";
+  json1: string | null = null;
+  json2: string | null = null;
   allIndents: number[] = [2, 4];
   indent: number;
   
@@ -36,7 +36,7 @@ export class JsonComponent implements OnInit {
   private covertJson(indent: number) {
     try {
       if (this.json1 == null || this.json1 == undefined || this.json1.trim() == '') {
-        this.json2 = '';
+        this.json2 = null;
       } else {
         this.json2 = JSON.stringify(JSON.parse(this.json1), null, indent);
       }
@@ -55,8 +55,10 @@ export class JsonComponent implements OnInit {
   }
 
   copy() {
-    this.clipboard.copy(this.json2);
-    this.notifier.notify(this.i18n_copied);
+    if (this.json2) {
+      this.clipboard.copy(this.json2);
+      this.notifier.notify(this.i18n_copied);
+    }
   }
 
 }

@@ -1,21 +1,20 @@
 <div class="row">
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="row-item" appearance="fill">
         <mat-label i18n>JSON string</mat-label>
-        <textarea matInput i18n-placeholder="Input Json1" (input)="onInputChangeJson1()" [(ngModel)]="json1" cdkTextareaAutosize
-        cdkAutosizeMinRows="60" cdkAutosizeMaxRows="150"></textarea>
+        <textarea matInput class="json1-content" i18n-placeholder="Input Json1" (input)="onInputChangeJson1()" [(ngModel)]="json1"></textarea>
     </mat-form-field>
-    <mat-card class="example-full-width">
+    <mat-card class="row-item">
         <div class="row">
             <mat-icon (click)="compress()" matTooltip="{{ i18n_storage }}">storage</mat-icon>
             <mat-icon (click)="copy()" matTooltip="{{ i18n_copyValue }}">file_copy</mat-icon>
             <span class="spacer"></span>
-            <mat-icon [matMenuTriggerFor]="indent">settings</mat-icon>
+            <mat-icon [matMenuTriggerFor]="indent" matTooltip="{{ i18n_indent }}">settings</mat-icon>
             <mat-menu #indent="matMenu">
-                <button mat-menu-item *ngFor="let i of allIndents" (click)="onChangeIndent(i)" matTooltip="{{ i18n_indent }}">{{ i }}</button>
+                <button mat-menu-item *ngFor="let i of allIndents" (click)="onChangeIndent(i)">{{ i }}</button>
             </mat-menu>
         </div>
-        <pre>
-            <code [highlight]="json2"></code>
+        <pre *ngIf="json2">
+            <code class="json2-content" [highlight]="json2"></code>
         </pre>
     </mat-card>
 
