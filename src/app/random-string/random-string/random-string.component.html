@@ -8,18 +8,18 @@
     </mat-card-title>
     <mat-card-content>
         <div class="row">
-            <mat-form-field appearance="fill">
+            <mat-form-field class="row-item" appearance="fill">
                 <mat-label i18n>Length</mat-label>
                 <input matInput type="number" [(ngModel)]="count">
             </mat-form-field>
-            <span class="spacer"></span>
-            <p class="result" (click)="copy()">{{ randomString }}</p>
-        </div>
-        <div class="row">
             <mat-checkbox class="row-item" [(ngModel)]="upper" i18n>Upper case letter</mat-checkbox>
             <mat-checkbox class="row-item" [(ngModel)]="lower" i18n>Lower case letter</mat-checkbox>
             <mat-checkbox class="row-item" [(ngModel)]="digital" i18n>Digital letter</mat-checkbox>
             <mat-checkbox class="row-item" [(ngModel)]="special" i18n>Special letter</mat-checkbox>
+            <span class="spacer"></span>
+        </div>
+        <div class="row">
+            <div class="result" (click)="copy()">{{ randomString }}</div>
         </div>
     </mat-card-content>
 </mat-card>

@@ -1,8 +1,11 @@
 .result {
-    padding: 16px;
-    font-size: xx-large;
-    font-weight: 400;
+    text-align: left;
+    word-break: break-all;
     color: blueviolet;
+}
+
+.row {
+    gap: 10px;
 }
 
 .row-item {
