@@ -1,0 +1,4 @@
+.row {
+    column-gap: 10px;
+    flex-wrap: wrap;
+}
