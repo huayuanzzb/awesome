@@ -15,19 +15,27 @@
         <target>已复制!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/json/json/json.component.ts</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">18</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/time/time/time.component.ts</context>
           <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3756628734717016744" datatype="html">
-        <source>Show in one line</source>
-        <target>显示为一行</target>
+      <trans-unit id="8568391282486788529" datatype="html">
+        <source>Compress</source>
+        <target>压缩</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/json/json/json.component.ts</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1359092845802014498" datatype="html">
+        <source>Expand</source>
+        <target>展开</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/json/json/json.component.ts</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4137907838636076016" datatype="html">
@@ -35,7 +43,7 @@
         <target>点击复制</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/json/json/json.component.ts</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">21</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/time/time/time.component.ts</context>
@@ -47,7 +55,14 @@
         <target>设置缩进</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/json/json/json.component.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8237584711277705286" datatype="html">
+        <source>缩进为 </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/json/json/json.component.ts</context>
+          <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2826581353496868063" datatype="html">
@@ -66,12 +81,20 @@
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="3755601013701439437" datatype="html">
+        <source>Generate And Copy</source>
+        <target>生成并复制</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/random-string/random-string/random-string.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="2827233633791350200" datatype="html">
         <source>Length</source>
         <target>长度</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/random-string/random-string/random-string.component.html</context>
-          <context context-type="linenumber">11</context>
+          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3948214469558214960" datatype="html">
@@ -79,7 +102,7 @@
         <target>大写字母</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/random-string/random-string/random-string.component.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7626821947904356495" datatype="html">
@@ -87,7 +110,7 @@
         <target>小写字母</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/random-string/random-string/random-string.component.html</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9144195012923802910" datatype="html">
@@ -95,7 +118,7 @@
         <target>数字</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/random-string/random-string/random-string.component.html</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7905025609739663946" datatype="html">
@@ -103,15 +126,7 @@
         <target>特殊字符</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/random-string/random-string/random-string.component.html</context>
-          <context context-type="linenumber">22</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3755601013701439437" datatype="html">
-        <source>Generate And Copy</source>
-        <target>生成并复制</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/random-string/random-string/random-string.component.html</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2095722121526391603" datatype="html">
