@@ -16,6 +16,7 @@ import { APP_BASE_HREF, PlatformLocation } from '@angular/common';
 import { LangSelectorComponent } from './lang-selector/lang-selector.component';
 import { HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipDefaultOptions, MAT_TOOLTIP_DEFAULT_OPTIONS } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
       useFactory: (s: PlatformLocation) => s.getBaseHrefFromDOM(),
       deps: [PlatformLocation]
     },
+    { 
+      provide: MAT_TOOLTIP_DEFAULT_OPTIONS, 
+      useValue: <MatTooltipDefaultOptions>{
+        showDelay: 300,
+        // hideDelay: 300,
+        // touchendHideDelay: 300
+      }
+    },
     {
       provide: HIGHLIGHT_OPTIONS,
       useValue: {
@@ -52,7 +61,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
           xml: () => import('highlight.js/lib/languages/xml'),
           json: () => import('highlight.js/lib/languages/json'),
         },
-        themePath: '//cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/atom-one-dark.min.css'
+        themePath: '//cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/github-dark.min.css'
       }
     }
   ],

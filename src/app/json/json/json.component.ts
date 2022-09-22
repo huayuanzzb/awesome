@@ -13,11 +13,14 @@ export class JsonComponent implements OnInit {
   json2: string | null = null;
   allIndents: number[] = [2, 4];
   indent: number;
+  compress: boolean = false;
   
   i18n_copied: string = $localize`Copied!`;
-  i18n_storage: string = $localize`Show in one line`;
+  i18n_compress: string = $localize`Compress`;
+  i18n_expand: string = $localize`Expand`;
   i18n_copyValue: string = $localize`Click to copy`;
   i18n_indent: string = $localize`Set indent`;
+  i18n_setIndent: string = $localize`Set indent as `;
 
   constructor(
     private clipboard: Clipboard,
@@ -50,8 +53,9 @@ export class JsonComponent implements OnInit {
     this.covertJson(this.indent);
   }
 
-  compress() {
-    this.covertJson(0);
+  compressOrExpand() {
+    this.compress = !this.compress;
+    this.covertJson(this.compress ? 0 : this.indent);
   }
 
   copy() {
