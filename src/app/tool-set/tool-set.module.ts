@@ -6,6 +6,7 @@ import { ToolSetComponent } from './tool-set/tool-set.component';
 import { TimeModule } from '../time/time.module';
 import { RandomStringModule } from '../random-string/random-string.module';
 import { UnitConversionModule } from '../unit-conversion/unit-conversion.module';
+import { EncodingModule } from '../encoding/encoding.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { UnitConversionModule } from '../unit-conversion/unit-conversion.module'
     TimeModule,
     RandomStringModule,
     UnitConversionModule,
+    EncodingModule,
   ]
 })
 export class ToolSetModule { }

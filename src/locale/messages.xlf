@@ -2,6 +2,35 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="947656567641781450" datatype="html">
+        <source>Origin String</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/encoding/base64/base64.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/encoding/md5/md5.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9134892187293009061" datatype="html">
+        <source>Encoded String</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/encoding/base64/base64.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/encoding/md5/md5.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5223235322022344945" datatype="html">
+        <source>Encode/Decode</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/encoding/encoding/encoding.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="4450607820531765777" datatype="html">
         <source>JSON string</source>
         <context-group purpose="location">

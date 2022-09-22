@@ -1,0 +1,13 @@
+<div class="row">
+    <mat-form-field class="row-item" appearance="fill">
+        <mat-label i18n>Origin String</mat-label>
+        <input matInput i18n-placeholder="Input Date Time" (input)="onInputChangeOrigin()" [(ngModel)]="origin">
+    </mat-form-field>
+    <span class="spacer"></span>
+    <mat-icon>keyboard_arrow_right</mat-icon>
+    <span class="spacer"></span>
+    <mat-form-field class="row-item" appearance="fill">
+        <mat-label i18n>Encoded String</mat-label>
+        <input matInput i18n-placeholder="Input epoch" readonly [(ngModel)]="encoded">
+    </mat-form-field>
+</div>
