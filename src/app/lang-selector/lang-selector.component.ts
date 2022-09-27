@@ -31,7 +31,7 @@ export class LangSelectorComponent implements OnInit {
     this.activeLocale = langCode;
     localStorage.setItem('selectedLang', langCode);
     const basePath = this.baseHref == '/' ? '' : this.baseHref.split('/')[0] + '/' + this.baseHref.split('/')[1];
-    window.location.href = `${basePath}/${this.activeLocale}`;
+    window.location.href = `${window.location.protocol}//${window.location.host}${basePath}/${this.activeLocale}`;
   }
 
 }
