@@ -22,7 +22,7 @@ jobs:
         
       - name: Build and Deploy
         run: |
-          ng build --localize --base-href "https://recaton.github.io/tools/" 
+          ng build --localize --base-href /tools/
           cp .github/index.html dist/tools/
           git config --global user.email "runner@github.com"
           git config --global user.name "runner"
