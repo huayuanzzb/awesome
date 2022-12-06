@@ -34,6 +34,7 @@ export class JsonComponent implements OnInit {
 
   onInputChangeJson1() {
     this.covertJson(this.indent);
+    this.compress = false;
   }
 
   private covertJson(indent: number) {

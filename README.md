@@ -1,6 +1,6 @@
 # Awesome Toolbox
 
-This project is a pure javascript project and is used to build some tools for me. 
+This project is a pure javascript project and is used to build some tools for myself. 
 
 It use [angular-cli-ghpages](https://medium.com/tech-insights/how-to-deploy-angular-apps-to-github-pages-gh-pages-896c4e10f9b4) to publish to [Github Pages](https://pages.github.com/)
 

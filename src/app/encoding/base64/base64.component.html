@@ -1,7 +1,7 @@
 <div class="row">
     <mat-form-field class="row-item" appearance="fill">
         <mat-label i18n>Origin String</mat-label>
-        <input matInput i18n-placeholder="Input Date Time" (input)="onInputChangeOrigin()" [(ngModel)]="origin">
+        <textarea matInput i18n-placeholder="Input Date Time" (input)="onInputChangeOrigin()" [(ngModel)]="origin" cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="20"></textarea>
     </mat-form-field>
     <span class="spacer"></span>
     <mat-icon>keyboard_arrow_left</mat-icon>
@@ -9,6 +9,6 @@
     <span class="spacer"></span>
     <mat-form-field class="row-item" appearance="fill">
         <mat-label i18n>Encoded String</mat-label>
-        <input matInput i18n-placeholder="Input epoch" (input)="onInputChangeEncoded()" [(ngModel)]="encoded">
+        <textarea matInput i18n-placeholder="Input epoch" (input)="onInputChangeEncoded()" [(ngModel)]="encoded" cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="20"></textarea>
     </mat-form-field>
 </div>
