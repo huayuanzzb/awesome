@@ -2,7 +2,7 @@ name: Publish
 on:
   push:
     branches:
-      - master
+      - master1
 env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
