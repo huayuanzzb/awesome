@@ -9,11 +9,11 @@ const routes: Routes = [
   },
   {
     path: 'set', 
-    loadChildren: () => import('../tool-set/tool-set.module').then(m => m.ToolSetModule)
+    loadChildren: () => import('./tool-set/tool-set.module').then(m => m.ToolSetModule)
   },
   {
     path: 'json',
-    loadChildren: () => import('../json/json.module').then(m => m.JsonModule)
+    loadChildren: () => import('./json/json.module').then(m => m.JsonModule)
   }
 ];
 
