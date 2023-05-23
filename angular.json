@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tools": {
+    "awesome": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -21,7 +21,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/tools",
+            "outputPath": "dist/awesome",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -83,14 +83,14 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "tools:build:production"
+              "browserTarget": "awesome:build:production"
             },
             "development": {
-              "browserTarget": "tools:build:development",
+              "browserTarget": "awesome:build:development",
               "disableHostCheck": true
             },
             "zh": {
-              "browserTarget": "tools:build:zh"
+              "browserTarget": "awesome:build:zh"
             }
           },
           "defaultConfiguration": "development"
@@ -98,7 +98,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "tools:build"
+            "browserTarget": "awesome:build"
           }
         },
         "test": {
@@ -124,5 +124,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
