@@ -8,7 +8,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'set',
+    path: 'set', 
     loadChildren: () => import('./tool-set/tool-set.module').then(m => m.ToolSetModule)
   },
   {
