@@ -11,14 +11,14 @@ ng extract-i18n --output-path src/locale
 ```
 Followig command build and publish the static files:
 ```bash
-ng build --localize --base-href /tools/ && cp .github/index.html dist/tools/
+ng build --localize --base-href /awesome/ && cp .github/index.html dist/awesome/
 
 # this command will create a branch named "gh-pages" contains the finally static files, these files will be published if Github Pages setting is correct.
-npx angular-cli-ghpages --dir=dist/tools
+npx angular-cli-ghpages --dir=dist/awesome
 ```
 
 # Visit
-After that, you can visit [https://recaton.github.io/tools/](https://recaton.github.io/tools/) to see the new changes.
+After that, you can visit [https://recaton.github.io/awesome/](https://recaton.github.io/awesome/) to see the new changes.
 
 # Reference
 * [i18n](https://phrase.com/blog/posts/angular-localization-i18n/#How_do_I_work_with_plurals_in_my_translations)

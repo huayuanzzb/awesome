@@ -22,8 +22,8 @@ jobs:
         
       - name: Build and Deploy
         run: |
-          ng build --localize --base-href /tools/
-          cp .github/index.html dist/tools/
+          ng build --localize --base-href /awesome/
+          cp .github/index.html dist/awesome/
           git config --global user.email "runner@github.com"
           git config --global user.name "runner"
           ng deploy --no-build --no-silent
