@@ -4,16 +4,16 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'set',
+    redirectTo: 'wiki',
     pathMatch: 'full'
   },
   {
-    path: 'set', 
-    loadChildren: () => import('./tool-set/tool-set.module').then(m => m.ToolSetModule)
+    path: 'wiki', 
+    loadChildren: () => import('./wiki/wiki.module').then(m => m.WikiModule)
   },
   {
-    path: 'json',
-    loadChildren: () => import('./json/json.module').then(m => m.JsonModule)
+    path: 'toolbox', 
+    loadChildren: () => import('./tool-box/tool-box.module').then(m => m.ToolBoxModule)
   }
 ];
 
