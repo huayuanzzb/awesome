@@ -15,8 +15,8 @@ export class WikiComponent {
     public sanitizer: DomSanitizer,
     @Inject(APP_BASE_HREF) private baseHref: string
   ){
-    const basePath = this.baseHref == '/' ? '' : this.baseHref.split('/')[0] + '/' + this.baseHref.split('/')[1];
-    this.blogUrlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(`${window.location.protocol}//${window.location.host}${basePath}/docs`);
+    const basePath = 'https://recaton.github.io/awesome/docs';
+    this.blogUrlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(basePath);
   }
 
 }
