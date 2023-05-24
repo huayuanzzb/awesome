@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { APP_BASE_HREF } from '@angular/common';
 
 @Component({
   selector: 'app-wiki',
@@ -6,9 +7,13 @@ import { Component } from '@angular/core';
 })
 export class WikiComponent {
 
+  blogSrc = "";
+
   constructor(
+    @Inject(APP_BASE_HREF) private baseHref: string
   ){
-    console.log(window.location.origin + window.location.pathname)
+    const basePath = this.baseHref == '/' ? '' : this.baseHref.split('/')[0] + '/' + this.baseHref.split('/')[1];
+    this.blogSrc = `${window.location.protocol}//${window.location.host}${basePath}/docs`;
   }
 
 }
