@@ -5,15 +5,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 @Component({
   selector: 'app-wiki',
   templateUrl: './wiki.component.html',
-  styles: [
-    `
-      .blog {
-        width: "100%";
-        height="100%" - 64px
-      }
-    `
-
-  ]
+  styleUrls: ['./wiki.component.css']
 })
 export class WikiComponent {
 
