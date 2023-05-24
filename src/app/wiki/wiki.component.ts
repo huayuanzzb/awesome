@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 export class WikiComponent {
 
   constructor(
-  ){}
+  ){
+    console.log(window.location.origin + window.location.pathname)
+  }
 
 }

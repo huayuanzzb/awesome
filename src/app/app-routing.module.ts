@@ -8,7 +8,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'wiki', 
+    path: 'blog', 
     loadChildren: () => import('./wiki/wiki.module').then(m => m.WikiModule)
   },
   {
