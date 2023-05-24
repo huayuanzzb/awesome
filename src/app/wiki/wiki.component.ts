@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-wiki',
@@ -7,14 +8,14 @@ import { APP_BASE_HREF } from '@angular/common';
 })
 export class WikiComponent {
 
-  blogSrc = "";
+  blogUrlSafe;
 
   constructor(
+    public sanitizer: DomSanitizer,
     @Inject(APP_BASE_HREF) private baseHref: string
   ){
     const basePath = this.baseHref == '/' ? '' : this.baseHref.split('/')[0] + '/' + this.baseHref.split('/')[1];
-    this.blogSrc = `${window.location.protocol}//${window.location.host}${basePath}/docs`;
-    console.log(this.blogSrc)
+    this.blogUrlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(`${window.location.protocol}//${window.location.host}${basePath}/docs`);
   }
 
 }
