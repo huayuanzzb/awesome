@@ -22,7 +22,7 @@ jobs:
         
       - name: Build and Deploy
         run: |
-          ng build --localize --base-href /awesome/
+          ng build --localize --base-href /
           cp .github/index.html dist/awesome/
           cp -r docs dist/awesome/
           git config --global user.email "runner@github.com"
