@@ -14,6 +14,7 @@ export class WikiComponent {
   ){
     const basePath = this.baseHref == '/' ? '' : this.baseHref.split('/')[0] + '/' + this.baseHref.split('/')[1];
     this.blogSrc = `${window.location.protocol}//${window.location.host}${basePath}/docs`;
+    console.log(this.blogSrc)
   }
 
 }
