@@ -17,29 +17,11 @@ export class WikiComponent {
   treeControl = new NestedTreeControl<PageNode>(node => node.children);
   dataSource = new MatTreeNestedDataSource<PageNode>();
 
-  TREE_DATA: PageNode[] = [
-    {
-      name: 'Fruit',
-      children: [{name: 'Apple'}, {name: 'Banana'}, {name: 'Fruit loops'}],
-    },
-    {
-      name: 'Vegetables',
-      children: [
-        {
-          name: 'Green',
-          children: [{name: 'Broccoli'}, {name: 'Brussels sprouts'}],
-        },
-        {
-          name: 'Orange',
-          children: [{name: 'Pumpkins'}, {name: 'Carrots'}],
-        },
-      ],
-    },
-  ];
-
   constructor(
   ){
-    this.dataSource.data = this.TREE_DATA
+    fetch('docs/meta.json').then<PageNode[]>(res => res.json()).then(data => {
+      this.dataSource.data = data;
+    })
   }
 
   hasChild = (_: number, node: PageNode) => !!node.children && node.children.length > 0;
