@@ -1,48 +1,27 @@
 {
-  "name": "tools",
+  "name": "awesome",
   "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve --host 0.0.0.0",
-    "start:zh": "ng serve --configuration zh",
-    "build": "ng build --localize",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
-  },
   "private": true,
+  "scripts": {
+    "dev": "vite --host",
+    "build": "run-p type-check build-only",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
+  },
   "dependencies": {
-    "@angular/animations": "^14.1.0",
-    "@angular/cdk": "^14.1.3",
-    "@angular/common": "^14.1.0",
-    "@angular/compiler": "^14.1.0",
-    "@angular/core": "^14.1.0",
-    "@angular/forms": "^14.1.0",
-    "@angular/material": "^14.1.3",
-    "@angular/platform-browser": "^14.1.0",
-    "@angular/platform-browser-dynamic": "^14.1.0",
-    "@angular/router": "^14.1.0",
-    "marked": "^4.3.0",
-    "ngx-highlightjs": "7.0.1",
-    "ngx-markdown": "^14.0.0",
-    "prismjs": "^1.29.0",
-    "rxjs": "~7.5.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "pinia": "^2.0.36",
+    "vue": "^3.3.2",
+    "vue-router": "^4.2.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^14.1.3",
-    "@angular/cli": "~14.1.3",
-    "@angular/compiler-cli": "^14.1.0",
-    "@angular/localize": "^14.1.3",
-    "@types/jasmine": "~4.0.0",
-    "@types/marked": "^4.3.1",
-    "angular-cli-ghpages": "^1.0.3",
-    "jasmine-core": "~4.2.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "~4.7.2"
+    "@tsconfig/node18": "^2.0.1",
+    "@types/node": "^18.16.8",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/tsconfig": "^0.4.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "~5.0.4",
+    "vite": "^4.3.5",
+    "vue-tsc": "^1.6.4"
   }
 }

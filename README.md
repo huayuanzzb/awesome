@@ -1,24 +1,40 @@
-# Awesome Toolbox
+# awesome
 
-This project is a pure javascript project and is used to build some tools for myself. 
+This template should help get you started developing with Vue 3 in Vite.
 
-It use [angular-cli-ghpages](https://medium.com/tech-insights/how-to-deploy-angular-apps-to-github-pages-gh-pages-896c4e10f9b4) to publish to [Github Pages](https://pages.github.com/)
+## Recommended IDE Setup
 
-# Build
-Extract localize files:
-```bash
-ng extract-i18n --output-path src/locale
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+
+## Type Support for `.vue` Imports in TS
+
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+
+If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+
+1. Disable the built-in TypeScript Extension
+    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
+    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
+2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
 ```
-Followig command build and publish the static files:
-```bash
-ng build --localize --base-href /awesome/ && cp .github/index.html dist/awesome/
 
-# this command will create a branch named "gh-pages" contains the finally static files, these files will be published if Github Pages setting is correct.
-npx angular-cli-ghpages --dir=dist/awesome
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
 ```
 
-# Visit
-After that, you can visit [https://recaton.github.io/awesome/](https://recaton.github.io/awesome/) to see the new changes.
+### Type-Check, Compile and Minify for Production
 
-# Reference
-* [i18n](https://phrase.com/blog/posts/angular-localization-i18n/#How_do_I_work_with_plurals_in_my_translations)
+```sh
+npm run build
+```
