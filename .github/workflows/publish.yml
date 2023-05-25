@@ -24,7 +24,6 @@ jobs:
         run: |
           ng build --localize --base-href /awesome/
           cp .github/index.html dist/awesome/
-          cp -r docs dist/awesome/
           git config --global user.email "runner@github.com"
           git config --global user.name "runner"
           ng deploy --no-build --no-silent

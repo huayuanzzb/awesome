@@ -1,6 +1,11 @@
-import { Component, Inject } from '@angular/core';
-import { APP_BASE_HREF } from '@angular/common';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import {NestedTreeControl} from '@angular/cdk/tree';
+import {Component} from '@angular/core';
+import {MatTreeNestedDataSource} from '@angular/material/tree';
+
+interface PageNode {
+  name: string;
+  children?: PageNode[];
+}
 
 @Component({
   selector: 'app-wiki',
@@ -9,14 +14,34 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class WikiComponent {
 
-  blogUrlSafe;
+  treeControl = new NestedTreeControl<PageNode>(node => node.children);
+  dataSource = new MatTreeNestedDataSource<PageNode>();
+
+  TREE_DATA: PageNode[] = [
+    {
+      name: 'Fruit',
+      children: [{name: 'Apple'}, {name: 'Banana'}, {name: 'Fruit loops'}],
+    },
+    {
+      name: 'Vegetables',
+      children: [
+        {
+          name: 'Green',
+          children: [{name: 'Broccoli'}, {name: 'Brussels sprouts'}],
+        },
+        {
+          name: 'Orange',
+          children: [{name: 'Pumpkins'}, {name: 'Carrots'}],
+        },
+      ],
+    },
+  ];
 
   constructor(
-    public sanitizer: DomSanitizer,
-    @Inject(APP_BASE_HREF) private baseHref: string
   ){
-    const basePath = 'https://recaton.github.io/awesome/docs';
-    this.blogUrlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(basePath);
+    this.dataSource.data = this.TREE_DATA
   }
+
+  hasChild = (_: number, node: PageNode) => !!node.children && node.children.length > 0;
 
 }
