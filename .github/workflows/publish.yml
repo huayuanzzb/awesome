@@ -20,14 +20,3 @@ jobs:
           username: 'recaton'
           reponame: 'awesome'
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Install dependency
-        run: npm install
-        
-      - name: Build and Deploy
-        run: |
-          npm run build
-          
-          git config --global user.email "runner@github.com"
-          git config --global user.name "runner"
-          ng deploy --no-build --no-silent
