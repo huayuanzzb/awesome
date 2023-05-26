@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <Json></Json>
-  </div>
+  <Json></Json>
 </template>
 
 <script setup lang="ts">
