@@ -7,8 +7,10 @@
     @close="handleClose"
   >
     <el-menu-item index="1">
+      <el-link :underline="false" href="code">
       <el-icon><icon-menu /></el-icon>
       <template #title>Code</template>
+      </el-link>
     </el-menu-item>
     <el-menu-item index="3" disabled>
       <el-icon><document /></el-icon>

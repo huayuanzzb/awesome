@@ -1,11 +1,14 @@
+<script setup lang="ts">
+import { RouterView } from 'vue-router'
+</script>
+
 <template>
   <el-config-provider namespace="ep">
     <BaseHeader />
     <div class="flex main-container">
       <BaseSide />
       <div w="full" py="4">
-        <Logos my="4" />
-        <HelloWorld msg="Hello Vue 3 + Element Plus + Vite" />
+        <RouterView />
       </div>
     </div>
   </el-config-provider>
