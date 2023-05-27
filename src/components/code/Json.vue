@@ -33,5 +33,6 @@ const onBeforeChange = () => {
 <style scoped>
 .ep-row {
   height: 100%;
+  margin: 0 !important;
 }
 </style>
