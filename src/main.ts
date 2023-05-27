@@ -12,6 +12,7 @@ import App from "./App.vue";
 import "~/styles/index.scss";
 import "uno.css";
 import router from './router'
+import CodeBlock from 'vue3-code-block';
 
 
 // If you want to use ElMessage, import it.
@@ -19,5 +20,6 @@ import "element-plus/theme-chalk/src/message.scss";
 
 const app = createApp(App);
 app.use(router)
+app.use(CodeBlock)
 // app.use(ElementPlus);
 app.mount("#app");
