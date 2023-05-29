@@ -12,7 +12,7 @@ declare module '@vue/runtime-core' {
     BaseHeader: typeof import('./components/layouts/BaseHeader.vue')['default']
     BaseSide: typeof import('./components/layouts/BaseSide.vue')['default']
     CodeIndex: typeof import('./components/code/CodeIndex.vue')['default']
-    Diff: typeof import('./components/diff/Diff.vue')['default']
+    Diff: typeof import('./components/text/Diff.vue')['default']
     DiffIndex: typeof import('./components/diff/DiffIndex.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCol: typeof import('element-plus/es')['ElCol']
@@ -28,11 +28,14 @@ declare module '@vue/runtime-core' {
     ElResult: typeof import('element-plus/es')['ElResult']
     ElRow: typeof import('element-plus/es')['ElRow']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    ElTabPane: typeof import('element-plus/es')['ElTabPane']
+    ElTabs: typeof import('element-plus/es')['ElTabs']
     ElTag: typeof import('element-plus/es')['ElTag']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     Json: typeof import('./components/code/Json.vue')['default']
     Logos: typeof import('./components/code/Logos.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TextIndex: typeof import('./components/text/TextIndex.vue')['default']
   }
 }

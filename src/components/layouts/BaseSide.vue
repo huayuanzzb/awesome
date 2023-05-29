@@ -18,12 +18,12 @@
       <template #title>Code</template>
     </el-menu-item>
     <el-menu-item index="3">
-      <el-link :underline="false" href="diff">
+      <el-link :underline="false" href="text">
         <el-icon>
           <DocumentCopy />
         </el-icon>
       </el-link>
-      <template #title>Text Compare</template>
+      <template #title>Text</template>
     </el-menu-item>
     <el-menu-item index="4">
       <el-icon>

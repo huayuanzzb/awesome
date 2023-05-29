@@ -16,9 +16,9 @@ const router = createRouter({
       component: CodeView
     },
     {
-      path: '/diff',
-      name: 'diff',
-      component: () => import('../components/diff/DiffIndex.vue')
+      path: '/text',
+      name: 'text',
+      component: () => import('../components/text/TextIndex.vue')
     }
   ]
 })
