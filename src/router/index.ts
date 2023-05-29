@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../components/HelloWorld.vue'
+import CodeView from '../components/code/CodeIndex.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,7 +13,7 @@ const router = createRouter({
     {
       path: '/code',
       name: 'code',
-      component: () => import('../components/code/CodeIndex.vue')
+      component: CodeView
     },
     {
       path: '/diff',
