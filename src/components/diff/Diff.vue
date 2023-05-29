@@ -14,7 +14,8 @@
   </el-row>
   <el-row>
     <el-col :span=24>
-      <VueDiff :mode="mode" :theme="theme" :language="language" :prev="prev" :current="current" :folding="folding" :input-delay="0"
+      <el-result v-if="prev == current" icon="success" title="文本内容一致"></el-result>
+      <VueDiff v-else :mode="mode" :theme="theme" :language="language" :prev="prev" :current="current" :folding="folding" :input-delay="0"
       :virtual-scroll="{ lineMinHeight: 24, delay: 100 }"
   />
     </el-col>
@@ -33,7 +34,7 @@ const showDiff = ref<boolean>(false)
 const prev = ref('')
 const current = ref('')
 const placeholder = "左侧输入json字符串，此处将自动展示格式化后的效果"
-const mode = ref<'split' | 'unified'>('unified')
+const mode = ref<'split' | 'unified'>('split')
 const theme = ref<'dark' | 'light'>('dark')
 const language = ref<string>('plaintext')
 const folding = ref<boolean>(false)
