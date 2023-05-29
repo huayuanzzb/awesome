@@ -38,6 +38,7 @@ export default defineConfig({
       extensions: ['vue', 'md'],
       // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      directoryAsNamespace: true,
       resolvers: [
         ElementPlusResolver({
           importStyle: 'sass',
