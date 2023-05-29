@@ -13,6 +13,11 @@ const router = createRouter({
       path: '/code',
       name: 'code',
       component: () => import('../components/code/Index.vue')
+    },
+    {
+      path: '/diff',
+      name: 'diff',
+      component: () => import('../components/diff/Index.vue')
     }
   ]
 })

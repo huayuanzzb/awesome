@@ -12,6 +12,7 @@
   "dependencies": {
     "element-plus": "^2.3.5",
     "vue": "^3.3.4",
+    "vue-diff": "^1.2.4",
     "vue3-code-block": "^2.1.2"
   },
   "devDependencies": {

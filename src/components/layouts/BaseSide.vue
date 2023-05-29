@@ -3,21 +3,27 @@
     @close="handleClose">
     <el-menu-item index="1">
       <el-link :underline="false" href="code">
-        <el-icon><UserFilled /></el-icon>
+        <el-icon>
+          <UserFilled />
+        </el-icon>
       </el-link>
-        <template #title>My Profile</template>
+      <template #title>My Profile</template>
     </el-menu-item>
     <el-menu-item index="2">
       <el-link :underline="false" href="code">
-        <el-icon><Switch /></el-icon>
+        <el-icon>
+          <Switch />
+        </el-icon>
       </el-link>
-        <template #title>Code</template>
+      <template #title>Code</template>
     </el-menu-item>
     <el-menu-item index="3">
-      <el-icon>
-        <document />
-      </el-icon>
-      <template #title>Text</template>
+      <el-link :underline="false" href="diff">
+        <el-icon>
+          <DocumentCopy />
+        </el-icon>
+      </el-link>
+      <template #title>Text Compare</template>
     </el-menu-item>
     <el-menu-item index="4">
       <el-icon>
@@ -32,7 +38,7 @@
 import { ref } from "vue";
 import {
   Location,
-  Document,
+  DocumentCopy,
   Menu as IconMenu,
   Setting,
   Switch,
