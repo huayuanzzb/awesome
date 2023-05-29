@@ -12,12 +12,12 @@ const router = createRouter({
     {
       path: '/code',
       name: 'code',
-      component: () => import('../components/code/Index.vue')
+      component: () => import('../components/code/CodeIndex.vue')
     },
     {
       path: '/diff',
       name: 'diff',
-      component: () => import('../components/diff/Index.vue')
+      component: () => import('../components/diff/DiffIndex.vue')
     }
   ]
 })
