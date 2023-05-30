@@ -7,7 +7,7 @@ import { RouterView } from 'vue-router'
     <BaseHeader />
     <div class="flex main-container">
       <BaseSide />
-      <div w="full" py="4">
+      <div class="content" w="full" py="4">
         <RouterView />
       </div>
     </div>
@@ -22,5 +22,9 @@ import { RouterView } from 'vue-router'
 
 .main-container {
   height: calc(100vh - var(--ep-menu-item-height) - 3px);
+}
+
+.content {
+  padding: 1rem;
 }
 </style>
