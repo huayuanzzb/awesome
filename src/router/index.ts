@@ -19,6 +19,11 @@ const router = createRouter({
       path: '/text',
       name: 'text',
       component: () => import('../components/text/TextIndex.vue')
+    },
+    {
+      path: '/test-land/rich-text',
+      name: 'test-land/rich-text',
+      component: () => import('../components/test-land/TestLandIndex.vue')
     }
   ]
 })
