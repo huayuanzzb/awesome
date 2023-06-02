@@ -13,8 +13,8 @@ import { UserFilled } from "@element-plus/icons-vue";
           <el-icon>
             <UserFilled />
           </el-icon>
+          Rich Text
         </el-link>
-        <template #title>Rich Text</template>
       </el-menu-item>
       <el-menu-item index="2-2">item two</el-menu-item>
       <el-menu-item index="2-3">item three</el-menu-item>
