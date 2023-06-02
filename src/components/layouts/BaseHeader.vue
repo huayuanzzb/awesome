@@ -9,7 +9,7 @@ import { UserFilled } from "@element-plus/icons-vue";
     <el-sub-menu index="2">
       <template #title>Test Land</template>
       <el-menu-item index="2-1">
-        <el-link :underline="false" href="test-land/rich-text">
+        <el-link :underline="false" @click="$router.push({ name: 'test-land/rich-text' })">
           <el-icon>
             <UserFilled />
           </el-icon>
