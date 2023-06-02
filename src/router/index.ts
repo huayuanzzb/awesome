@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../components/HelloWorld.vue'
 import CodeView from '../components/code/CodeIndex.vue'
+import JsonView from '../components/code/Json.vue'
+import TextView from '../components/code/text/TextIndex.vue'
+import TestLandView from '../components/test-land/TestLandIndex.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,19 +22,19 @@ const router = createRouter({
         {
           path: 'json',
           name: 'json',
-          component: () => import('../components/code/Json.vue')
+          component: JsonView
         },
         {
           path: 'text',
           name: 'text',
-          component: () => import('../components/code/text/TextIndex.vue')
+          component: TextView
         }
       ]
     },
     {
       path: '/test-land/rich-text',
       name: 'test-land/rich-text',
-      component: () => import('../components/test-land/TestLandIndex.vue')
+      component: TestLandView
     },
     {
       path: '/:catchAll(.*)',
