@@ -18,7 +18,7 @@ import { RouterView } from 'vue-router'
 }
 
 .main-container {
-  height: calc(100vh - var(--ep-menu-item-height) - 3px);
+  min-height: calc(100vh - var(--ep-menu-item-height) - 3px);
 }
 
 .content {
