@@ -2,7 +2,7 @@
   <el-menu default-active="1" class="el-menu-vertical-demo" :collapse="isCollapse" @open="handleOpen"
     @close="handleClose">
     <el-menu-item index="1">
-      <el-link :underline="false" href="code">
+      <el-link :underline="false" href="profile">
         <el-icon>
           <UserFilled />
         </el-icon>
@@ -10,12 +10,12 @@
       <template #title>My Profile</template>
     </el-menu-item>
     <el-menu-item index="2">
-      <el-link :underline="false" href="code">
+      <el-link :underline="false" href="json">
         <el-icon>
           <Switch />
         </el-icon>
       </el-link>
-      <template #title>Code</template>
+      <template #title>Json</template>
     </el-menu-item>
     <el-menu-item index="3">
       <el-link :underline="false" href="text">

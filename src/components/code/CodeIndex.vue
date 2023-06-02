@@ -1,10 +1,12 @@
 <template>
-  <Json></Json>
+  <CodeSide />
+  <div class="content" w="full" py="4">
+    <RouterView />
+  </div>
 </template>
 
 <script setup lang="ts">
-import Json from './Json.vue'
+import CodeSide from './CodeSide.vue'
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

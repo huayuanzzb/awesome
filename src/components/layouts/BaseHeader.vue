@@ -1,11 +1,18 @@
 <script lang="ts" setup>
 import { toggleDark } from "~/composables";
-import { UserFilled } from "@element-plus/icons-vue";
+import { UserFilled, Tools } from "@element-plus/icons-vue";
 </script>
 
 <template>
   <el-menu mode="horizontal">
-    <el-menu-item index="1">Tool Box</el-menu-item>
+    <el-menu-item index="1">
+      <el-link :underline="false" @click="$router.push({ name: 'tool-box' })">
+          <el-icon>
+            <Tools />
+          </el-icon>
+          Tool Box
+        </el-link>
+    </el-menu-item>
     <el-sub-menu index="2">
       <template #title>Test Land</template>
       <el-menu-item index="2-1">

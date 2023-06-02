@@ -6,10 +6,7 @@ import { RouterView } from 'vue-router'
   <el-config-provider namespace="ep">
     <BaseHeader />
     <div class="flex main-container">
-      <BaseSide />
-      <div class="content" w="full" py="4">
-        <RouterView />
-      </div>
+      <RouterView />
     </div>
   </el-config-provider>
 </template>
