@@ -2,6 +2,7 @@ name: gp-server-01
 on: 
   repository_dispatch:
     types: [gp-server-01]
+  workflow_dispatch:
 jobs:
   gp-server-01:
     runs-on: ubuntu-latest
