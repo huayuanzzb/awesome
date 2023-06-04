@@ -1,0 +1,46 @@
+name: gp-server-01
+on: 
+  repository_dispatch:
+    types: [gp-server-01]
+jobs:
+  gh-agt-01:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      # - name: Change runner password
+      #   run: |
+      #     echo -e "runner\nrunner" | sudo passwd runner
+
+      - name: Add SSH pub key
+        run: |
+          mkdir /home/runner/.ssh
+          echo "${{ secrets.SSH_KEY_FOR_DEBUG }}" >> /home/runner/.ssh/authorized_keys
+          chmod 600 /home/runner/.ssh/authorized_keys
+
+      - name: Install frpc
+        run: |
+          wget https://github.com/fatedier/frp/releases/download/v0.42.0/frp_0.42.0_linux_amd64.tar.gz
+          tar xf frp_0.42.0_linux_amd64.tar.gz
+          sudo cp frp_0.42.0_linux_amd64/frpc /usr/bin/
+          sudo cp frp_0.42.0_linux_amd64/systemd/frpc.service /etc/systemd/system/
+          sudo mkdir /etc/frp
+          cat > frpc.ini <<EOF
+            [common]
+            server_addr = 112.124.20.91
+            server_port = 7000
+
+            [gp-server-01]
+            type = tcp
+            local_ip = 127.0.0.1
+            local_port = 22
+            remote_port = 10100
+          EOF
+          sudo mv frpc.ini /etc/frp/
+          cat /etc/frp/frpc.ini
+          sudo systemctl daemon-reload
+          sudo systemctl start frpc.service
+
+      - name: Don't kill instace
+      shell: bash
+      run: sleep ${{ inputs.keepalive }}
