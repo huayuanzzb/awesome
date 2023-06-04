@@ -3,7 +3,7 @@ on:
   repository_dispatch:
     types: [gp-server-01]
 jobs:
-  gh-agt-01:
+  gp-server-01:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -42,5 +42,5 @@ jobs:
           sudo systemctl start frpc.service
 
       - name: Don't kill instace
-      shell: bash
-      run: sleep ${{ inputs.keepalive }}
+        shell: bash
+        run: sleep 19800
