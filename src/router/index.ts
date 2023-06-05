@@ -5,6 +5,7 @@ import JsonView from '../components/code/Json.vue'
 import TextView from '../components/code/text/TextIndex.vue'
 import TestLandView from '../components/test-land/TestLandIndex.vue'
 import CKEditorView from '../components/test-land/ckeditorView.vue'
+import EditorJSView from '../components/test-land/editorjsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -46,7 +47,7 @@ const router = createRouter({
         {
           path: 'editorjs',
           name: 'editorjs',
-          component: CKEditorView
+          component: EditorJSView
         }
       ]
     },
