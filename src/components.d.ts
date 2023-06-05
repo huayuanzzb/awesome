@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BaseHeader: typeof import('./components/layouts/BaseHeader.vue')['default']
     BaseSide: typeof import('./components/layouts/BaseSide.vue')['default']
+    CkeditorView: typeof import('./components/test-land/ckeditorView.vue')['default']
     CodeIndex: typeof import('./components/code/CodeIndex.vue')['default']
     CodeSide: typeof import('./components/code/CodeSide.vue')['default']
     Diff: typeof import('./components/code/text/Diff.vue')['default']
@@ -34,6 +35,7 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TestLandIndex: typeof import('./components/test-land/TestLandIndex.vue')['default']
+    TestLandSide: typeof import('./components/test-land/TestLandSide.vue')['default']
     TextIndex: typeof import('./components/code/text/TextIndex.vue')['default']
   }
 }

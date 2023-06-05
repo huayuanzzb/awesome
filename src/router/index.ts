@@ -4,6 +4,7 @@ import CodeView from '../components/code/CodeIndex.vue'
 import JsonView from '../components/code/Json.vue'
 import TextView from '../components/code/text/TextIndex.vue'
 import TestLandView from '../components/test-land/TestLandIndex.vue'
+import CKEditorView from '../components/test-land/ckeditorView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,7 +35,20 @@ const router = createRouter({
     {
       path: '/test-land/rich-text',
       name: 'test-land/rich-text',
-      component: TestLandView
+      component: TestLandView,
+      redirect: '/test-land/rich-text/ckeditor',
+      children: [
+        {
+          path: 'ckeditor',
+          name: 'ckeditor',
+          component: CKEditorView
+        },
+        {
+          path: 'editorjs',
+          name: 'editorjs',
+          component: CKEditorView
+        }
+      ]
     },
     {
       path: '/:catchAll(.*)',
