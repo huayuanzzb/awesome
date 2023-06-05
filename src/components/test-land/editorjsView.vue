@@ -1,4 +1,12 @@
 
 <template>
-<h1>Editor JS</h1>
+    <div id="editorjs"></div>
 </template>
+
+<script setup lang="ts">
+import EditorJS from '@editorjs/editorjs';
+
+const editor = new EditorJS({
+    holder: "editorjs"
+});
+</script>
