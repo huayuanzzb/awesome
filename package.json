@@ -14,6 +14,8 @@
     "@ckeditor/ckeditor5-vue": "^5.1.0",
     "@editorjs/editorjs": "^2.27.0",
     "@editorjs/header": "^2.7.0",
+    "axios": "^1.4.0",
+    "axios-mock-adapter": "^1.21.4",
     "element-plus": "^2.3.5",
     "vue": "^3.3.4",
     "vue-diff": "^1.2.4",

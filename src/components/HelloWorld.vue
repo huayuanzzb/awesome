@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, defineComponent, inject, onMounted } from "vue";
 import { ElMessage } from "element-plus";
 
 defineProps<{ msg: string }>();
@@ -8,10 +8,25 @@ const count = ref(0);
 const input = ref("element-plus");
 
 const curDate = ref("");
+const version = ref<string>('')
 
 const toast = () => {
   ElMessage.success("Hello");
 };
+
+const $client = inject("$client");
+
+const getVersion = () => {
+  $client.get('/api/version').then(res => {
+    console.log(res.data)
+    version.value = res.data.version
+  })
+}
+
+onMounted(() => {
+  getVersion()
+})
+
 </script>
 
 <template>
@@ -67,6 +82,8 @@ const toast = () => {
       | On demand Example:
       <a href="https://github.com/element-plus/unplugin-element-plus"
         target="_blank">unplugin-element-plus/examples/vite</a>
+    </p>
+    <p>Version: <code>{{ version }}</code>
     </p>
   </div>
 </template>

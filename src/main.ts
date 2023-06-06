@@ -1,3 +1,6 @@
+import axios from "axios";
+import Mock from "./mock.js";
+
 import { createApp } from "vue";
 import App from "./App.vue";
 
@@ -22,9 +25,18 @@ import CKEditor from '@ckeditor/ckeditor5-vue';
 import "element-plus/theme-chalk/src/message.scss";
 
 const app = createApp(App);
+
+const axiosClient = axios.create({});
+// axiosClient.defaults.withCredentials = true;
+// axiosClient.defaults.headers["X-Requested-With"] = "XMLHttpRequest";
+Mock.mocked(axiosClient);
+
 app.use(router)
 app.use(CodeBlock)
 app.use(VueDiff, { componentName: 'VueDiff' })
 app.use(CKEditor)
 // app.use(ElementPlus);
+
+app.provide("$client", axiosClient);
+
 app.mount("#app");
