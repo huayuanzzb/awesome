@@ -13,12 +13,15 @@
     "@ckeditor/ckeditor5-build-classic": "^38.0.1",
     "@ckeditor/ckeditor5-vue": "^5.1.0",
     "@editorjs/editorjs": "^2.27.0",
+    "@editorjs/header": "^2.7.0",
     "element-plus": "^2.3.5",
     "vue": "^3.3.4",
     "vue-diff": "^1.2.4",
     "vue3-code-block": "^2.1.2"
   },
   "devDependencies": {
+    "@editorjs/link": "^2.5.0",
+    "@editorjs/simple-image": "^1.5.1",
     "@iconify-json/ep": "^1.1.10",
     "@types/node": "^20.2.1",
     "@vitejs/plugin-vue": "^4.2.3",
