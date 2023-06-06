@@ -1,8 +1,6 @@
 <template>
-    <div class="content" w="full" py="4">
-        <div id="ep-ckeditor" style="height: 500px">
+    <div id="ep-ckeditor" style="height: 500px">
         <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
-    </div>
     </div>
 </template>
 
