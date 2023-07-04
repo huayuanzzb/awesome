@@ -35,6 +35,18 @@ export default {
 :deep() .ck-editor__editable:not(.ck-editor__nested-editable) {
     min-height: 400px;
 }
+
+:deep() .ck {
+    --ck-color-text: var(--ep-menu-text-color);
+    --ck-color-base-background: var(--ep-bg-color);
+    --ck-color-toolbar-background: var(--ep-bg-color);
+    --ck-color-toolbar-border: var(--ep-border-color);
+    --ck-color-base-border: var(--ep-border-color);
+
+    
+    --ck-color-panel-background: var(--ep-bg-color);
+    --ck-color-button-default-hover-background: var(--ep-menu-item-hover-fill);
+}
 </style>
 
 <style>
