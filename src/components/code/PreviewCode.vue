@@ -35,4 +35,8 @@ code {
 pre[class*="language-"].line-numbers {
     padding-left: 1rem;
 }
+
+pre[class*="language-"] {
+    margin: 0em 0;
+}
 </style>
