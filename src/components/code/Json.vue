@@ -7,19 +7,16 @@
 
     <el-col :span="12">
       <!-- 貌似 vue3-code-block 有bug， after 有变化时， 代码高亮和行号插件都不能及时响应 -->
-      <CodeBlock v-if="after" prismjs prism-plugin lang="json" class="line-numbers" :code="after"></CodeBlock>
-      <CodeBlock v-else prismjs lang="html" :code="hint"/>
+      <!-- <CodeBlock v-if="after" prismjs prism-plugin lang="json" class="line-numbers" :code="after"></CodeBlock>
+      <CodeBlock v-else prismjs lang="html" :code="hint"/> -->
+      <preview-code v-if="after" :code="after" lang="json" lineNumbers></preview-code>
+
     </el-col>
   </el-row>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-
-import 'prismjs'
-import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
-import 'prismjs/components/prism-json';
 
 
 const before = ref('')

@@ -4,7 +4,7 @@ import vue from '@vitejs/plugin-vue'
 
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-
+import { prismjsPlugin } from 'vite-plugin-prismjs'
 import Unocss from 'unocss/vite'
 import {
   presetAttributify,
@@ -33,6 +33,12 @@ export default defineConfig({
   base: '/awesome',
   plugins: [
     vue(),
+    prismjsPlugin({
+      languages: 'all', // 语言
+      plugins: ['line-numbers'],
+      theme: 'okaidia',// 主题
+      css: true,
+    }),
     Components({
       // allow auto load markdown components under `./src/components/`
       extensions: ['vue', 'md'],

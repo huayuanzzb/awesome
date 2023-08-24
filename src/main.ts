@@ -15,7 +15,7 @@ import App from "./App.vue";
 import "~/styles/index.scss";
 import "uno.css";
 import router from './router'
-import CodeBlock from 'vue3-code-block';
+
 import VueDiff from 'vue-diff'
 import 'vue-diff/dist/index.css';
 import CKEditor from '@ckeditor/ckeditor5-vue';
@@ -32,7 +32,7 @@ const axiosClient = axios.create({});
 Mock.mocked(axiosClient);
 
 app.use(router)
-app.use(CodeBlock)
+
 app.use(VueDiff, { componentName: 'VueDiff' })
 app.use(CKEditor)
 // app.use(ElementPlus);
