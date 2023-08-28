@@ -6,7 +6,7 @@
     </el-col>
 
     <el-col :span="12">
-      <preview-code v-if="after" :code="after" lang="json" lineNumbers></preview-code>
+      <preview-code class="preview" v-if="after" :code="after" lang="json" lineNumbers></preview-code>
       <preview-code v-else :code="hint" lang="html"></preview-code>
     </el-col>
   </el-row>
@@ -42,5 +42,9 @@ const onBeforeChange = () => {
 .ep-row {
   height: 100%;
   margin: 0 !important;
+}
+
+.preview {
+  max-height: calc(100vh - 2rem - 95px);
 }
 </style>
