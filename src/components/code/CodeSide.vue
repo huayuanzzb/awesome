@@ -26,10 +26,12 @@
       <template #title>Text</template>
     </el-menu-item>
     <el-menu-item index="4">
-      <el-icon>
-        <setting />
+      <el-link :underline="false" href="time">
+        <el-icon>
+        <clock />
       </el-icon>
-      <template #title>Settings</template>
+      </el-link>
+      <template #title>Time</template>
     </el-menu-item>
   </el-menu>
 </template>
@@ -37,7 +39,7 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import {
-  Location,
+  Clock,
   DocumentCopy,
   Menu as IconMenu,
   Setting,

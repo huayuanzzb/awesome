@@ -3,6 +3,7 @@ import HomeView from '../components/HelloWorld.vue'
 import CodeView from '../components/code/CodeIndex.vue'
 import JsonView from '../components/code/Json.vue'
 import TextView from '../components/code/text/TextIndex.vue'
+import TimeView from '../components/code/time/Time.vue'
 import TestLandView from '../components/test-land/TestLandIndex.vue'
 import CKEditorView from '../components/test-land/ckeditorView.vue'
 import EditorJSView from '../components/test-land/editorjsView.vue'
@@ -30,6 +31,11 @@ const router = createRouter({
           path: 'text',
           name: 'text',
           component: TextView
+        },
+        {
+          path: 'time',
+          name: 'time',
+          component: TimeView
         }
       ]
     },

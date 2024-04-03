@@ -32,11 +32,6 @@ onMounted(() => {
 <template>
   <div class="content" w="full" py="4">
     <h1 color="$ep-color-primary">{{ msg }}</h1>
-
-    <div  class="logo">
-
-      <img :src="logo"/>
-    </div>
     <p>
       See
       <a href="https://element-plus.org" target="_blank">element-plus</a> for more
