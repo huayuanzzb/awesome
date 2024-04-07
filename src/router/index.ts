@@ -14,28 +14,43 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta: {
+        title: 'Home'
+      }
     },
     {
       path: '/tool-box',
       name: 'tool-box',
       component: CodeView,
+      meta: {
+        title: 'Tool Box'
+      },
       redirect: '/tool-box/json',
       children: [
         {
           path: 'json',
           name: 'json',
-          component: JsonView
+          component: JsonView,
+          meta: {
+            title: 'JSON'
+          }
         },
         {
           path: 'text',
           name: 'text',
-          component: TextView
+          component: TextView,
+          meta: {
+            title: 'Text'
+          }
         },
         {
           path: 'time',
           name: 'time',
-          component: TimeView
+          component: TimeView,
+          meta: {
+            title: 'Time'
+          }
         }
       ]
     },
@@ -62,6 +77,11 @@ const router = createRouter({
       redirect: '/'
     }
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title || 'My App'
+  next();
 })
 
 export default router
