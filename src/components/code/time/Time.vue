@@ -4,7 +4,7 @@
     {{ '>>' }}
     <el-input ref="afterInput" v-model="after">
       <template #append>
-        <el-select v-model="selectFormat" placeholder="Select a format" style="width: 320px" @change="covert">
+        <el-select v-model="selectFormat" placeholder="Select a format" style="width: 320px" @change="onSelectChange">
           <el-option v-for="f in formats" :label="f" :value="f" />
           <template #footer>
             <el-button v-if="!isAdding" text bg size="small" @click="onAddOption">
@@ -13,7 +13,7 @@
             <template v-else>
               <el-form ref="customFormatFormRef" :label-position="'top'" :rules="customFormatFormRules"
                 :model="customFormatForm">
-                <el-form-item label="New Format">
+                <el-form-item label="New Format" prop="customFormat">
                   <el-input v-model="customFormatForm.customFormat" />
                 </el-form-item>
                 <el-form-item>
@@ -64,6 +64,7 @@ import {
 } from "@element-plus/icons-vue";
 
 const CUSTOM_DATETIME_FORMAT_KEY = 'custom-datetime-formats'
+const SELECTED_DATETIME_FORMAT_KEY = 'selected-datetime-formats'
 const DEFAULT_FORMATS = [
   'YYYY-MM-DD hh:mm:ss.SSS'
 ]
@@ -74,15 +75,27 @@ const before = ref<string>()
 const after = ref<string>()
 const beforeInput = ref()
 const afterInput = ref()
-const selectFormat = ref('YYYY-MM-DD hh:mm:ss.SSS')
+const selectFormat = ref('')
 const isAdding = ref(false)
 const customFormatForm = reactive({
   customFormat: ''
 })
+
+
+const validateCustomFormat = (rule: any, value: any, callback: any) => {
+  try {
+    dayjs(new Date()).format(customFormatForm.customFormat)
+    callback()
+  } catch {
+    callback(new Error("Invalid format!"))
+  }
+}
+
 const customFormatFormRef = ref<FormInstance>()
 const customFormatFormRules = reactive<FormRules>({
   customFormat: [
-    { required: true, message: 'Please input custom format', trigger: 'blur' }
+    { required: true, message: 'Please input custom format', trigger: 'blur' },
+    { validator: validateCustomFormat, trigger: 'blur'}
   ]
 })
 const formats = reactive<string[]>([])
@@ -95,6 +108,7 @@ onMounted(() => {
     now.value = new Date()
     epoch.value = now.value.getTime()
   }, 1)
+  selectFormat.value = localStorage.getItem(SELECTED_DATETIME_FORMAT_KEY) || DEFAULT_FORMATS[0]
   computeForamts()
 })
 
@@ -114,9 +128,7 @@ const saveCustomFormat = async (formEl: FormInstance | undefined) => {
       isAdding.value = false
       customFormatForm.customFormat = ''
       computeForamts()
-    } else {
-      console.log('error submit!', fields)
-    }
+    } 
   })
 }
 
@@ -137,6 +149,12 @@ const clear = () => {
   customFormatForm.customFormat = ''
   isAdding.value = false
 }
+
+const onSelectChange = () => {
+  localStorage.setItem(SELECTED_DATETIME_FORMAT_KEY, selectFormat.value)
+  covert()
+}
+
 const covert = () => {
   formatDate(new Date(Number(before.value)))
 }
