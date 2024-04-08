@@ -9,8 +9,8 @@
             <el-option v-for="item in f.options" :key="item.value" :label="item.label" :value="item.value">
               <template v-if="f.group == 'Custom'">
                 <span style="float: left">{{ item.label }}</span>
-                <span style="float: right; color: var(--el-text-color-secondary); font-size: 13px;" @click="removeCustomFormat(item.label)">
-                  <el-icon><Close /></el-icon>
+                <span style="float: right;" class="remove-custom-format-btn">
+                  <el-button type="danger" :icon="Delete" @click.stop="removeCustomFormat(item.label)" />
                 </span>
               </template>
 
@@ -69,7 +69,7 @@
 import { ref, reactive, onMounted } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { dayjs } from 'element-plus'
-import { Close } from "@element-plus/icons-vue";
+import { Delete } from "@element-plus/icons-vue";
 
 
 const CUSTOM_DATETIME_FORMAT_KEY = 'custom-datetime-formats'
@@ -153,7 +153,7 @@ const saveCustomFormat = async (formEl: FormInstance | undefined) => {
 }
 
 const removeCustomFormat = (format: string) => {
-  localStorage.removeItem(CUSTOM_DATETIME_FORMAT_KEY)
+  localStorage.setItem(CUSTOM_DATETIME_FORMAT_KEY, JSON.stringify(Array.from(getCachedFormats()).filter(i => i !== format)))
   computeForamts()
 }
 
@@ -191,7 +191,11 @@ const formatDate = (date: Date) => {
 </script>
 
 <style scoped>
-.ep-row {
-  padding: 1rem !important;
+.remove-custom-format-btn {
+  color: var(--el-text-color-secondary); 
+  font-size: 13px;
+}
+.remove-custom-format-btn:hover {
+  color: red
 }
 </style>
