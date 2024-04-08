@@ -5,7 +5,17 @@
     <el-input ref="afterInput" v-model="after">
       <template #append>
         <el-select v-model="selectFormat" placeholder="Select a format" style="width: 320px" @change="onSelectChange">
-          <el-option v-for="f in formats" :label="f" :value="f" />
+          <el-option-group v-for="f in formats" :key="f.group" :label="f.group">
+            <el-option v-for="item in f.options" :key="item.value" :label="item.label" :value="item.value">
+              <template v-if="f.group == 'Custom'">
+                <span style="float: left">{{ item.label }}</span>
+                <span style="float: right; color: var(--el-text-color-secondary); font-size: 13px;" @click="removeCustomFormat(item.label)">
+                  <el-icon><Close /></el-icon>
+                </span>
+              </template>
+
+            </el-option>
+          </el-option-group>
           <template #footer>
             <el-button v-if="!isAdding" text bg size="small" @click="onAddOption">
               Add an format
@@ -59,9 +69,8 @@
 import { ref, reactive, onMounted } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { dayjs } from 'element-plus'
-import {
-  QuestionFilled
-} from "@element-plus/icons-vue";
+import { Close } from "@element-plus/icons-vue";
+
 
 const CUSTOM_DATETIME_FORMAT_KEY = 'custom-datetime-formats'
 const SELECTED_DATETIME_FORMAT_KEY = 'selected-datetime-formats'
@@ -81,7 +90,6 @@ const customFormatForm = reactive({
   customFormat: ''
 })
 
-
 const validateCustomFormat = (rule: any, value: any, callback: any) => {
   try {
     dayjs(new Date()).format(customFormatForm.customFormat)
@@ -95,10 +103,18 @@ const customFormatFormRef = ref<FormInstance>()
 const customFormatFormRules = reactive<FormRules>({
   customFormat: [
     { required: true, message: 'Please input custom format', trigger: 'blur' },
-    { validator: validateCustomFormat, trigger: 'blur'}
+    { validator: validateCustomFormat, trigger: 'blur' }
   ]
 })
-const formats = reactive<string[]>([])
+
+interface GroupOptions {
+  group: string,
+  options: [{
+    label: string,
+    value: string
+  }]
+}
+const formats = reactive<GroupOptions[]>([])
 
 onMounted(() => {
   beforeInput?.value?.focus()
@@ -114,8 +130,12 @@ onMounted(() => {
 
 const computeForamts = () => {
   formats.length = 0
-  DEFAULT_FORMATS.forEach(i => formats.push(i))
-  getCachedFormats().forEach(i => formats.push(i))
+  formats.push({ group: "Default", options: DEFAULT_FORMATS.map(i => { return { label: i, value: i } }) })
+  var customFormats = Array.from(getCachedFormats())
+  if (customFormats) {
+    formats.push({ group: "Custom", options: customFormats.map(i => { return { label: i, value: i } }) })
+  }
+  
 }
 
 const saveCustomFormat = async (formEl: FormInstance | undefined) => {
@@ -128,8 +148,13 @@ const saveCustomFormat = async (formEl: FormInstance | undefined) => {
       isAdding.value = false
       customFormatForm.customFormat = ''
       computeForamts()
-    } 
+    }
   })
+}
+
+const removeCustomFormat = (format: string) => {
+  localStorage.removeItem(CUSTOM_DATETIME_FORMAT_KEY)
+  computeForamts()
 }
 
 const getCachedFormats = () => {
