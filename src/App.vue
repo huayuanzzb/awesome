@@ -4,9 +4,11 @@ import { RouterView } from 'vue-router'
 
 <template>
   <el-config-provider namespace="ep">
-    <BaseHeader />
     <div class="flex main-container">
-      <RouterView />
+      <BaseHeader />
+      <div class="main-content">
+        <RouterView />
+      </div>
     </div>
   </el-config-provider>
 </template>
@@ -16,12 +18,19 @@ import { RouterView } from 'vue-router'
   text-align: center;
   color: var(--ep-text-color-primary);
 }
-
-.main-container {
-  min-height: calc(100vh - var(--ep-menu-item-height) - 3px);
-}
-
 .content {
   padding: 1rem;
+}
+</style>
+
+<style scoped>
+.main-container {
+  height: 100vh;
+  flex-direction: column;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
 }
 </style>

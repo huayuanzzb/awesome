@@ -9,8 +9,8 @@
             <el-option v-for="item in f.options" :key="item.value" :label="item.label" :value="item.value">
               <template v-if="f.group == 'Custom'">
                 <span style="float: left">{{ item.label }}</span>
-                <span style="float: right;" class="remove-custom-format-btn">
-                  <el-button type="danger" :icon="Delete" @click.stop="removeCustomFormat(item.label)" />
+                <span style="float: right;">
+                  <el-button type="danger" :icon="Delete" size="small" @click.stop="removeCustomFormat(item.label)" />
                 </span>
               </template>
 
@@ -18,7 +18,7 @@
           </el-option-group>
           <template #footer>
             <el-button v-if="!isAdding" text bg size="small" @click="onAddOption">
-              Add an format
+              Add a format
             </el-button>
             <template v-else>
               <el-form ref="customFormatFormRef" :label-position="'top'" :rules="customFormatFormRules"
@@ -72,6 +72,10 @@ import { dayjs } from 'element-plus'
 import { Delete } from "@element-plus/icons-vue";
 
 
+interface CustomFormatForm {
+  customFormat: string,
+}
+
 const CUSTOM_DATETIME_FORMAT_KEY = 'custom-datetime-formats'
 const SELECTED_DATETIME_FORMAT_KEY = 'selected-datetime-formats'
 const DEFAULT_FORMATS = [
@@ -86,7 +90,9 @@ const beforeInput = ref()
 const afterInput = ref()
 const selectFormat = ref('')
 const isAdding = ref(false)
-const customFormatForm = reactive({
+
+
+const customFormatForm = reactive<CustomFormatForm>({
   customFormat: ''
 })
 
@@ -100,6 +106,7 @@ const validateCustomFormat = (rule: any, value: any, callback: any) => {
 }
 
 const customFormatFormRef = ref<FormInstance>()
+
 const customFormatFormRules = reactive<FormRules>({
   customFormat: [
     { required: true, message: 'Please input custom format', trigger: 'blur' },
@@ -109,10 +116,10 @@ const customFormatFormRules = reactive<FormRules>({
 
 interface GroupOptions {
   group: string,
-  options: [{
+  options: {
     label: string,
     value: string
-  }]
+  }[]
 }
 const formats = reactive<GroupOptions[]>([])
 
@@ -191,11 +198,4 @@ const formatDate = (date: Date) => {
 </script>
 
 <style scoped>
-.remove-custom-format-btn {
-  color: var(--el-text-color-secondary); 
-  font-size: 13px;
-}
-.remove-custom-format-btn:hover {
-  color: red
-}
 </style>

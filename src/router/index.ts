@@ -80,7 +80,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title || 'My App'
+  document.title = <string>to.meta.title || 'Awesome'
   next();
 })
 
