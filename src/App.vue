@@ -18,9 +18,6 @@ import { RouterView } from 'vue-router'
   text-align: center;
   color: var(--ep-text-color-primary);
 }
-.content {
-  padding: 1rem;
-}
 </style>
 
 <style scoped>

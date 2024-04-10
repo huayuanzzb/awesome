@@ -9,4 +9,8 @@
 import CodeSide from './CodeSide.vue'
 </script>
 
-<style scoped></style>
+<style scoped>
+.content {
+  padding: 1rem;
+}
+</style>
