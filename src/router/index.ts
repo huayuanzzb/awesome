@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../components/HelloWorld.vue'
 import CodeView from '../components/code/CodeIndex.vue'
 import JsonView from '../components/code/Json.vue'
+import MyToolView from '../components/code/my-tools/MyTools.vue'
 import TextView from '../components/code/text/TextIndex.vue'
 import TimeView from '../components/code/time/Time.vue'
 import TestLandView from '../components/test-land/TestLandIndex.vue'
@@ -26,8 +27,16 @@ const router = createRouter({
       meta: {
         title: 'Tool Box'
       },
-      redirect: '/tool-box/json',
+      redirect: '/tool-box/my-tools',
       children: [
+        {
+          path: 'my-tools',
+          name: 'my-tools',
+          component: MyToolView,
+          meta: {
+            title: 'My Tools'
+          }
+        },
         {
           path: 'json',
           name: 'json',

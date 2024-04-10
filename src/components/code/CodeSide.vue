@@ -2,7 +2,7 @@
   <el-menu default-active="1" class="el-menu-vertical-demo" :collapse="isCollapse" @open="handleOpen"
     @close="handleClose">
     <el-menu-item index="1">
-      <el-link :underline="false" href="profile">
+      <el-link :underline="false" href="my-tools">
         <el-icon>
           <UserFilled />
         </el-icon>

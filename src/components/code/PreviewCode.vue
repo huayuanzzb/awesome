@@ -39,4 +39,8 @@ pre[class*="language-"].line-numbers {
 pre[class*="language-"] {
     margin: 0em 0;
 }
+
+pre[class*="language-"].line-numbers > code {
+  position: fixed;
+}
 </style>
