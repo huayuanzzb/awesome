@@ -1,24 +1,25 @@
 <template>
-  <div class="flex mb-4">
-    <el-input v-model="wsURL" placeholder="Please input WebSocket URL">
-      <template #suffix>
-        <el-button v-if="!websocket" type="primary" @click="connect"
-          :loading="status == 'Connecting...'">Connect</el-button>
-        <el-button v-if="websocket != undefined" type="danger" @click="close">Disconnect</el-button>
-      </template>
-    </el-input>
+  <div class="flex mb-4" style="flex-direction: column;">
+    <div>
+      <el-input v-model="wsURL" placeholder="Please input WebSocket URL">
+        <template #suffix>
+          <el-button v-if="!websocket" type="primary" @click="connect"
+            :loading="status == 'Connecting...'">Connect</el-button>
+          <el-button v-if="websocket != undefined" type="danger" @click="close">Disconnect</el-button>
+        </template>
+      </el-input>
 
-  </div>
-  <div>
+    </div>
     <!-- <div class="status">{{ status }}</div> -->
     <div class="console">
-      <div v-for="m in msgList" class="msg" :class="selectClass(m)">
-        <!-- <el-text>{{ m.at }}</el-text> -->
+      <div v-for="(m, index) in msgList" class="msg" :class="selectClass(m)">
+        <el-text style="padding-right: .5rem">[{{ index + 1 }}]</el-text>
+        <el-text style="padding-right: .5rem">[{{ m.at }}]</el-text>
         <el-text>{{ m.content }}</el-text>
       </div>
     </div>
     <div calss="sender">
-      <el-input v-model="msg" placeholder="Input message...">
+      <el-input v-model="msg" maxlength="128" show-word-limit placeholder="Input message..." @keyup.enter.native="onClickSend">
         <template #suffix>
           <el-button type="primary" @click="onClickSend">Send</el-button>
         </template>
@@ -31,7 +32,7 @@
 
 <script lang="ts" setup>
 interface Message {
-  type: 'S' | 'C' | 'O',
+  type: 'S' | 'C' | 'I' | 'E',
   content: string,
   at: Date
 }
@@ -58,9 +59,8 @@ const onClickSend = () => {
 
 const onSocketOpen = () => {
   status.value = "Connected"
-
   msgList.value.push({
-    type: 'O',
+    type: 'I',
     content: 'Connected',
     at: new Date()
   })
@@ -71,8 +71,10 @@ const selectClass = (m: Message) => {
     return 'send'
   } else if ((m.type == 'S')) {
     return 'recv'
+  } else if ((m.type == 'E')) {
+    return 'erro'
   } else {
-    return 'oper'
+    return 'info'
   }
 }
 
@@ -86,7 +88,11 @@ const onSocketMessage = (event: MessageEvent) => {
 };
 
 const onSockerError = (event: any) => {
-  close()
+  msgList.value.push({
+    type: 'E',
+    content: 'WebSocket error.',
+    at: new Date()
+  })
 };
 
 onMounted(() => {
@@ -101,17 +107,18 @@ const close = () => {
     status.value = "Closed."
 
     msgList.value.push({
-      type: 'O',
+      type: 'I',
       content: 'Closed',
       at: new Date()
     })
+    websocket.value = undefined
   }
 }
 
 const connect = () => {
   status.value = "Connecting..."
   msgList.value.push({
-    type: 'O',
+    type: 'I',
     content: 'Try to connect...',
     at: new Date()
   })
@@ -140,30 +147,23 @@ const connect = () => {
   padding-right: .5rem;
 }
 
-.send {
-  color: lightgrey;
-}
-
 .send::before {
   color: var(--ep-color-primary);
   content: "[send]";
 }
 
-.recv {
-  color: var(--ep-color-info);
-}
-
 .recv::before {
-  color: var(--ep-color-danger);
+  color: var(--ep-color-success);
   content: "[recv]";
 }
 
-.oper {
-  color: var(--ep-color-info);
+.erro::before {
+  color: var(--ep-color-danger);
+  content: "[erro]";
 }
 
-.oper::before {
-  color: var(--ep-color-primary);
-  content: "[oper]";
+.info::before {
+  color: var(--ep-color-info);
+  content: "[info]";
 }
 </style>
