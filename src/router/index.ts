@@ -8,6 +8,9 @@ import TimeView from '../components/code/time/Time.vue'
 import TestLandView from '../components/test-land/TestLandIndex.vue'
 import CKEditorView from '../components/test-land/ckeditorView.vue'
 import EditorJSView from '../components/test-land/editorjsView.vue'
+import TesterView from '../components/tester/TesterIndex.vue'
+import WebSocketView from '../components/tester/WebSocketView.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -79,6 +82,19 @@ const router = createRouter({
           name: 'editorjs',
           component: EditorJSView
         }
+      ]
+    },
+    {
+      path: '/tester',
+      name: 'tester',
+      component: TesterView,
+      redirect: '/tester/ws',
+      children: [
+        {
+          path: 'ws',
+          name: 'ws',
+          component: WebSocketView
+        },
       ]
     },
     {

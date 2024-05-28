@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     CkeditorView: typeof import('./components/test-land/ckeditorView.vue')['default']
     CodeIndex: typeof import('./components/code/CodeIndex.vue')['default']
     CodeSide: typeof import('./components/code/CodeSide.vue')['default']
+    copy: typeof import('./components/tester/WebSocketView.vue')['default']
     Diff: typeof import('./components/code/text/Diff.vue')['default']
     EditorjsView: typeof import('./components/test-land/editorjsView.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
@@ -22,7 +23,6 @@ declare module '@vue/runtime-core' {
     ElDatePicker: typeof import('element-plus/es')['ElDatePicker']
     ElDescriptions: typeof import('element-plus/es')['ElDescriptions']
     ElDescriptionsItem: typeof import('element-plus/es')['ElDescriptionsItem']
-    ElDialog: typeof import('element-plus/es')['ElDialog']
     ElForm: typeof import('element-plus/es')['ElForm']
     ElFormItem: typeof import('element-plus/es')['ElFormItem']
     ElIcon: typeof import('element-plus/es')['ElIcon']
@@ -46,9 +46,12 @@ declare module '@vue/runtime-core' {
     PreviewCode: typeof import('./components/code/PreviewCode.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TesterIndex: typeof import('./components/tester/TesterIndex.vue')['default']
+    TesterSide: typeof import('./components/tester/TesterSide.vue')['default']
     TestLandIndex: typeof import('./components/test-land/TestLandIndex.vue')['default']
     TestLandSide: typeof import('./components/test-land/TestLandSide.vue')['default']
     TextIndex: typeof import('./components/code/text/TextIndex.vue')['default']
     Time: typeof import('./components/code/time/Time.vue')['default']
+    WebSocketView: typeof import('./components/tester/WebSocketView.vue')['default']
   }
 }

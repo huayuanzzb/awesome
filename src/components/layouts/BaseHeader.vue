@@ -32,7 +32,11 @@ import { UserFilled, Tools } from "@element-plus/icons-vue";
         <el-menu-item index="2-4-3">item three</el-menu-item>
       </el-sub-menu>
     </el-sub-menu>
-    <el-menu-item index="3" disabled>Info</el-menu-item>
+    <el-menu-item index="3">
+      <el-link :underline="false" @click="$router.push({ name: 'tester' })">
+          Tester
+        </el-link>
+    </el-menu-item>
     <el-menu-item index="4">Orders</el-menu-item>
     <el-menu-item h="full" @click="toggleDark()">
       <button class="border-none w-full bg-transparent cursor-pointer" style="height: var(--ep-menu-item-height)">
