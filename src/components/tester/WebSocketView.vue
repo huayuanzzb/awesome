@@ -1,9 +1,13 @@
 <template>
   <div class="flex mb-4">
-    <el-input v-model="wsURL" placeholder="Please input WebSocket URL"></el-input>
-    <el-button type="primary" @click="connect" :loading="status == 'Connecting...'"
-      v-if="!websocket">Connect</el-button>
-    <el-button type="danger" @click="close" v-if="websocket != undefined">Disconnect</el-button>
+    <el-input v-model="wsURL" placeholder="Please input WebSocket URL">
+      <template #suffix>
+        <el-button v-if="!websocket" type="primary" @click="connect"
+          :loading="status == 'Connecting...'">Connect</el-button>
+        <el-button v-if="websocket != undefined" type="danger" @click="close">Disconnect</el-button>
+      </template>
+    </el-input>
+
   </div>
   <div>
     <!-- <div class="status">{{ status }}</div> -->
