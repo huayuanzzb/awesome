@@ -107,13 +107,14 @@ const connect = () => {
 }
 
 .msg {
-  border-bottom: 1px dashed lightgrey;
+  border-bottom: 1px dashed #343233;
   display: flex;
+  font-family: monospace;
 }
 
 .msg::before {
-  display: inline-block;
-  width: 5rem;
+  display: flex;
+  padding-right: .5rem;
 }
 
 .send {
