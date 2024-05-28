@@ -37,7 +37,7 @@ interface Message {
   at: Date
 }
 
-import { ref, reactive, onMounted } from "vue";
+import { ref, onUnmounted, onMounted } from "vue";
 const wsURL = ref("wss://echo.websocket.org/");
 const websocket = ref<WebSocket>();
 const status = ref<string>();
@@ -97,6 +97,10 @@ const onSockerError = (event: any) => {
 
 onMounted(() => {
   connect()
+})
+
+onUnmounted(() => {
+  close()
 })
 
 const close = () => {
