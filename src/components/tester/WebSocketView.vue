@@ -13,8 +13,8 @@
     <!-- <div class="status">{{ status }}</div> -->
     <div class="console">
       <div v-for="(m, index) in msgList" class="msg" :class="selectClass(m)">
+        <el-text style="padding-right: .5rem">[{{ dayjs(m.at).format('YYYY-MM-DD hh:mm:ss.SSS') }}]</el-text>
         <el-text style="padding-right: .5rem">[{{ index + 1 }}]</el-text>
-        <el-text style="padding-right: .5rem">[{{ m.at }}]</el-text>
         <el-text>{{ m.content }}</el-text>
       </div>
     </div>
@@ -38,6 +38,8 @@ interface Message {
 }
 
 import { ref, onUnmounted, onMounted } from "vue";
+import { dayjs } from 'element-plus'
+
 const wsURL = ref("wss://echo.websocket.org/");
 const websocket = ref<WebSocket>();
 const status = ref<string>();
