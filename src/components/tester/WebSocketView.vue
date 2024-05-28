@@ -1,8 +1,9 @@
 <template>
   <div class="flex mb-4">
     <el-input v-model="wsURL" placeholder="Please input WebSocket URL"></el-input>
-    <el-button type="primary" @click="connect" :disabled="websocket != undefined">Connect</el-button>
-    <el-button type="danger" @click="close" :disabled="!websocket">Disconnect</el-button>
+    <el-button type="primary" @click="connect" :loading="status == 'Connecting...'"
+      v-if="!websocket">Connect</el-button>
+    <el-button type="danger" @click="close" v-if="websocket != undefined">Disconnect</el-button>
   </div>
   <div>
     <!-- <div class="status">{{ status }}</div> -->
@@ -26,7 +27,7 @@
 
 <script lang="ts" setup>
 interface Message {
-  type: 'S' | 'C',
+  type: 'S' | 'C' | 'O',
   content: string,
   at: Date
 }
@@ -45,8 +46,7 @@ const onClickSend = () => {
       type: 'C',
       content: msg.value,
       at: new Date()
-    }
-    )
+    })
 
   }
   msg.value = ''
@@ -54,13 +54,21 @@ const onClickSend = () => {
 
 const onSocketOpen = () => {
   status.value = "Connected"
+
+  msgList.value.push({
+    type: 'O',
+    content: 'Connected',
+    at: new Date()
+  })
 }
 
 const selectClass = (m: Message) => {
   if (m.type == 'C') {
     return 'send'
-  } else {
+  } else if ((m.type == 'S')) {
     return 'recv'
+  } else {
+    return 'oper'
   }
 }
 
@@ -87,11 +95,22 @@ const close = () => {
     websocket.value.close()
     websocket.value = undefined
     status.value = "Closed."
+
+    msgList.value.push({
+      type: 'O',
+      content: 'Closed',
+      at: new Date()
+    })
   }
 }
 
 const connect = () => {
   status.value = "Connecting..."
+  msgList.value.push({
+    type: 'O',
+    content: 'Try to connect...',
+    at: new Date()
+  })
   websocket.value = new WebSocket(wsURL.value)
   websocket.value.onopen = onSocketOpen;
   websocket.value.onmessage = onSocketMessage;
@@ -133,5 +152,14 @@ const connect = () => {
 .recv::before {
   color: var(--ep-color-danger);
   content: "[recv]";
+}
+
+.oper {
+  color: var(--ep-color-info);
+}
+
+.oper::before {
+  color: var(--ep-color-primary);
+  content: "[oper]";
 }
 </style>
