@@ -12,10 +12,9 @@
     </div>
     <!-- <div class="status">{{ status }}</div> -->
     <div class="console">
-      <div v-for="(m, index) in msgList" class="msg" :data-index="index"
-        :data-at="dayjs(m.at).format('YYYY-MM-DD hh:mm:ss.SSS')">
+      <div v-for="(m, index) in msgList" class="msg" :data-index="index">
         <div :class="selectClass(m)">
-          <el-text>{{ m.content }}</el-text>
+          <el-text class="msg-content" :data-at="dayjs(m.at).format('YYYY-MM-DD hh:mm:ss.SSS')">{{ m.content }}</el-text>
         </div>
       </div>
     </div>
@@ -152,8 +151,14 @@ const connect = () => {
 
 .msg::before {
   display: flex;
+  width: 40px;
   color: var(--ep-border-color);
-  content: '[' attr(data-index)'] ' '[' attr(data-at)']';
+  content: '[' attr(data-index)'] ';
+}
+
+.msg-content::before {
+  color: var(--ep-border-color);
+  content: '[' attr(data-at)'] ';
 }
 
 .send::before {
