@@ -12,14 +12,16 @@
     </div>
     <!-- <div class="status">{{ status }}</div> -->
     <div class="console">
-      <div v-for="(m, index) in msgList" class="msg" :class="selectClass(m)">
-        <el-text style="padding-right: .5rem">[{{ dayjs(m.at).format('YYYY-MM-DD hh:mm:ss.SSS') }}]</el-text>
-        <el-text style="padding-right: .5rem">[{{ index + 1 }}]</el-text>
-        <el-text>{{ m.content }}</el-text>
+      <div v-for="(m, index) in msgList" class="msg" :data-index="index"
+        :data-at="dayjs(m.at).format('YYYY-MM-DD hh:mm:ss.SSS')">
+        <div :class="selectClass(m)">
+          <el-text>{{ m.content }}</el-text>
+        </div>
       </div>
     </div>
     <div calss="sender">
-      <el-input v-model="msg" maxlength="128" show-word-limit placeholder="Input message..." @keyup.enter.native="onClickSend">
+      <el-input v-model="msg" maxlength="128" show-word-limit placeholder="Input message..."
+        @keyup.enter.native="onClickSend">
         <template #suffix>
           <el-button type="primary" @click="onClickSend">Send</el-button>
         </template>
@@ -150,26 +152,27 @@ const connect = () => {
 
 .msg::before {
   display: flex;
-  padding-right: .5rem;
+  color: var(--ep-border-color);
+  content: '[' attr(data-index)'] ' '[' attr(data-at)']';
 }
 
 .send::before {
   color: var(--ep-color-primary);
-  content: "[send]";
+  content: " [send] ";
 }
 
 .recv::before {
   color: var(--ep-color-success);
-  content: "[recv]";
+  content: " [recv] ";
 }
 
 .erro::before {
   color: var(--ep-color-danger);
-  content: "[erro]";
+  content: " [erro] ";
 }
 
 .info::before {
   color: var(--ep-color-info);
-  content: "[info]";
+  content: " [info] ";
 }
 </style>
