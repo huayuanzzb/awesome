@@ -1,75 +1,96 @@
 <template>
-  <div class="flex gap-4 mb-4 items-center">
-    <el-input ref="beforeInput" v-model="before" @input="covert()"></el-input>
-    {{ '>>' }}
-    <el-input ref="afterInput" v-model="after">
-      <template #append>
-        <el-select v-model="selectFormat" placeholder="Select a format" style="width: 320px" @change="onSelectChange">
-          <el-option-group v-for="f in formats" :key="f.group" :label="f.group">
-            <el-option v-for="item in f.options" :key="item.value" :label="item.label" :value="item.value">
-              <template v-if="f.group == 'Custom'">
-                <span style="float: left">{{ item.label }}</span>
-                <span style="float: right;">
-                  <el-button type="danger" :icon="Delete" size="small" @click.stop="removeCustomFormat(item.label)" />
-                </span>
-              </template>
 
-            </el-option>
-          </el-option-group>
-          <template #footer>
-            <el-button v-if="!isAdding" text bg size="small" @click="onAddOption">
-              Add a format
-            </el-button>
-            <template v-else>
-              <el-form ref="customFormatFormRef" :label-position="'top'" :rules="customFormatFormRules"
-                :model="customFormatForm">
-                <el-form-item label="New Format" prop="customFormat">
-                  <el-input v-model="customFormatForm.customFormat" />
-                </el-form-item>
-                <el-form-item>
-                  <el-button type="primary" size="small" @click="saveCustomFormat(customFormatFormRef)">
-                    confirm
-                  </el-button>
-                  <el-button size="small" @click="clear">cancel</el-button>
-                </el-form-item>
-              </el-form>
+  <el-row>
+    <el-col :span="8" :offset="8">
+      
+    <div class="covert">
+      <el-input ref="beforeInput" style="height: 60px;" v-model="before" @input="covert()"></el-input>
+      <el-col :span="1"><el-icon style="padding: 1rem; font-size: 20px;"><Plus /></el-icon></el-col>
+      <el-select v-model="selectFormat" style="width: 320px;" placeholder="Select a format" @change="onSelectChange">
+        <el-option-group v-for="f in formats" :key="f.group" :label="f.group">
+          <el-option v-for="item in f.options" :key="item.value" :label="item.label" :value="item.value">
+            <template v-if="f.group == 'Custom'">
+              <span style="float: left">{{ item.label }}</span>
+              <span style="float: right;">
+                <el-button type="danger" :icon="Delete" size="small" @click.stop="removeCustomFormat(item.label)" />
+              </span>
             </template>
+
+          </el-option>
+        </el-option-group>
+        <template #footer>
+          <el-button v-if="!isAdding" text bg size="small" @click="onAddOption">
+            Add a format
+          </el-button>
+          <template v-else>
+            <el-form ref="customFormatFormRef" :label-position="'top'" :rules="customFormatFormRules"
+              :model="customFormatForm">
+              <el-form-item label="New Format" prop="customFormat">
+                <el-input v-model="customFormatForm.customFormat" />
+              </el-form-item>
+              <el-form-item>
+                <el-button type="primary" size="small" @click="saveCustomFormat(customFormatFormRef)">
+                  confirm
+                </el-button>
+                <el-button size="small" @click="clear">cancel</el-button>
+              </el-form-item>
+            </el-form>
           </template>
-        </el-select>
-      </template>
-    </el-input>
+        </template>
+      </el-select>
+      <el-col :span="1"><el-icon style="padding: 1rem; transform: rotate(90deg);font-size: 20px;"><DArrowRight /></el-icon></el-col>
+      <el-descriptions :column="1" border style="width: -webkit-fill-available;">
+          <el-descriptions-item>
+            <template #label>
+              <div class="cell-item">Your Timezone</div>
+            </template>
+            {{ after }}
+          </el-descriptions-item>
+          <el-descriptions-item>
+            <template #label>
+              <div class="cell-item">UTC</div>
+            </template>
+            {{ now?.toUTCString() }}
+          </el-descriptions-item>
+        </el-descriptions>
+    </div>
+    </el-col>
+  </el-row>
+
+  <el-divider border-style="dotted" />
 
 
-  </div>
-
-  <el-descriptions :column="1" border>
-    <el-descriptions-item>
-      <template #label>
-        <div class="cell-item">epoch</div>
-      </template>
-      {{ epoch }}
-    </el-descriptions-item>
-    <el-descriptions-item>
-      <template #label>
-        <div class="cell-item">Timestamp</div>
-      </template>
-      {{ now }}
-    </el-descriptions-item>
-    <el-descriptions-item>
-      <template #label>
-        <div class="cell-item">Timezone</div>
-      </template>
-      {{ Intl.DateTimeFormat().resolvedOptions().timeZone }}
-    </el-descriptions-item>
-  </el-descriptions>
-
+  <el-row :gutter="10">
+    <el-col :span="16" :offset="4">
+      <el-descriptions :column="1" border>
+          <el-descriptions-item>
+            <template #label>
+              <div class="cell-item">epoch</div>
+            </template>
+            {{ epoch }}
+          </el-descriptions-item>
+          <el-descriptions-item>
+            <template #label>
+              <div class="cell-item">Your Timezone</div>
+            </template>
+            {{ now }}
+          </el-descriptions-item>
+          <el-descriptions-item>
+            <template #label>
+              <div class="cell-item">Your Location</div>
+            </template>
+            <el-tag type="success">{{ Intl.DateTimeFormat().resolvedOptions().timeZone }}</el-tag>
+          </el-descriptions-item>
+        </el-descriptions>
+    </el-col>
+  </el-row>
 </template>
 
 <script lang="ts" setup>
 import { ref, reactive, onMounted } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { dayjs } from 'element-plus'
-import { Delete } from "@element-plus/icons-vue";
+import { Delete, DArrowRight, Plus, Location } from "@element-plus/icons-vue";
 
 
 interface CustomFormatForm {
@@ -142,7 +163,7 @@ const computeForamts = () => {
   if (customFormats) {
     formats.push({ group: "Custom", options: customFormats.map(i => { return { label: i, value: i } }) })
   }
-  
+
 }
 
 const saveCustomFormat = async (formEl: FormInstance | undefined) => {
@@ -198,4 +219,14 @@ const formatDate = (date: Date) => {
 </script>
 
 <style scoped>
+.ep-row {
+  padding-bottom: 1rem;
+}
+
+.covert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 </style>
